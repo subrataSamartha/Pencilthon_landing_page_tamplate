@@ -31,7 +31,7 @@ function HeroSection() {
       className="max-w-[1280px] mx-auto px-24 py-56 bg-hero-img"
     >
       <div className="max-w-[540px] flex flex-col gap-4 text-white">
-        <Heading1 text={Data.Hero.heading} />
+        <Heading1 text={Data.Hero.heading} size="4xl" weight="bold" />
         <Paragraph text={Data.Hero.paragraph} />
         <div className="mt-2">
           <Button text="Join Community" />

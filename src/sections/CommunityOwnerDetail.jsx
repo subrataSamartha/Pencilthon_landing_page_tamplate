@@ -32,7 +32,11 @@ function CommunityOwnerDetail() {
         <div className="md:w-[50%] mt-6">
           <div className="flex flex-col gap-6">
             <div>
-              <Heading1 text={Data.Community.heading} />
+              <Heading1
+                text={Data.Community.heading}
+                size="4xl"
+                weight="bold"
+              />
             </div>
             <div className="opacitu-80">
               <Paragraph text={Data.Community.paragraph} />
