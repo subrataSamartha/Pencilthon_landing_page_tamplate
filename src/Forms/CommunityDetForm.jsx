@@ -1,7 +1,7 @@
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux/es/exports";
-import ImagePicker from "../components/ImagePicker";
 import { getData, setData } from "../Redux/DataReducer";
+
 const CommunityDetForm = () => {
   const dispatch = useDispatch();
   const Data = useSelector(getData);
@@ -15,11 +15,6 @@ const CommunityDetForm = () => {
   const changeInfo = (e) => {
     setInfo({ ...info, [e.name]: e.value });
   };
-
-  //   const handleCreateBase64 = useCallback(async (e) => {
-  //     const file = e.target.files[0];
-  //     const base64 = await convertToBase64(file);
-  //   }, []);
 
   function captureImage(e) {
     const file = e.target.files[0];
