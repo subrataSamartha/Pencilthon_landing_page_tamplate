@@ -6,13 +6,14 @@ import { setSideBarShow, setFormNo } from "../Redux/SetBarReducer";
 import { useSelector, useDispatch } from "react-redux";
 import { getShow } from "../Redux/SetBarReducer";
 import { getData } from "../Redux/DataReducer";
+
 function CommunityOwnerDetail() {
   const showSideBar = useSelector(getShow);
   const Data = useSelector(getData);
   const dispatch = useDispatch();
 
   const sidebarCall = () => {
-    console.log(Data.Community);
+    // console.log(Data.Community);
     if (showSideBar === "off") {
       dispatch(setSideBarShow("on"));
       dispatch(setFormNo(2));

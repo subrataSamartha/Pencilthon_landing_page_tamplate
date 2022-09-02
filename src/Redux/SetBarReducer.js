@@ -10,10 +10,10 @@ const SideBarSlice = createSlice({
   initialState,
   reducers: {
     setSideBarShow: (state, action) => {
-      console.log("sidebarshow");
-      console.log(state);
+      //   console.log("sidebarshow");
+      //   console.log(state);
       state.show = action.payload;
-      console.log(state.show);
+      //   console.log(state.show);
     },
     setFormNo: (state, action) => {
       state.formNo = action.payload;

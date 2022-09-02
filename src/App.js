@@ -15,7 +15,7 @@ function App() {
       <CommunityDescription />
       <CommunityOwnerDetail />
       <ExploreGroup />
-      <CommunityLiveFeed />
+      {/* <CommunityLiveFeed /> */}
     </div>
   );
 }
