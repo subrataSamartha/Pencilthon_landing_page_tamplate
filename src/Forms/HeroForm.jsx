@@ -40,8 +40,8 @@ const HeroForm = () => {
       <h1 className="text-xl font-bold py-5">HeroSection</h1>
       <div className="mb-6">
         <label
-          for="Heading"
-          className="block mb-2 text-sm font-medium text-gray-900 "
+          for = "Heading"
+          className = "block mb-2 text-sm font-medium text-gray-900 "
         >
           Heading
         </label>

@@ -10,8 +10,7 @@ const initialState = {
     heading: "Default",
     paragraph: "Default",
   },
-  ExploreGroup: {
-    cards: [
+  ExploreGroup:  [
       {
         id: 1,
         groupName: "Javascript Community",
@@ -41,7 +40,7 @@ const initialState = {
         image: "./images/4.jpg",
       },
     ],
-  },
+  
 };
 
 const dataSlice = createSlice({

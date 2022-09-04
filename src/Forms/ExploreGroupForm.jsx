@@ -5,7 +5,7 @@ import { AiFillDelete } from "react-icons/ai";
 
 import { v4 as uuidv4 } from "uuid";
 import { getData, setData } from "../Redux/DataReducer";
-import GroupSmallCard from "../components/GroupSmallCard";
+// import GroupSmallCard from "../components/GroupCard";
 
 const initState = {
   groupName: "New Group 1",
@@ -20,7 +20,7 @@ const ExploreGroupForm = () => {
 
   const [todo, setTodo] = useState(initState);
 
-  const [info, setInfo] = useState([...Data.ExploreGroup.cards]);
+  const [info, setInfo] = useState([...Data.ExploreGroup]);
 
   const changeInfo = (e) => {
     setTodo({ ...todo, [e.name]: e.value });
@@ -43,21 +43,27 @@ const ExploreGroupForm = () => {
     });
 
     setInfo(newContactList);
+    dispatch(
+      setData({
+        section: "ExploreGroup",
+        data: newContactList,
+      })
+    );
   }
 
   const submitData = () => {
     let t = info;
     t = [...t, { id: uuidv4(), ...todo }];
     setTodo(initState);
-    setInfo(t);
-    console.log("t", t);
+    setInfo([...t]);
+    console.log("info", info);
 
-    // dispatch(
-    //   setData({
-    //     section: "ExploreGroup",
-    //     data: info,
-    //   })
-    // );
+    dispatch(
+      setData({
+        section: "ExploreGroup",
+        data: t,
+      })
+    );
   };
 
   return (

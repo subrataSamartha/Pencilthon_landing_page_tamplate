@@ -3,7 +3,7 @@ import Heading1 from "../components/Heading1";
 
 function CommunityDescription() {
   return (
-    <div class="max-w-[1280px] mx-auto flex flex-col md:flex-row justify-between items-start p-8 md:p-24 gap-4">
+    <div class="w-full shadow-lg bg-gradient-to-br from-gray-box to-white mx-auto flex flex-col md:flex-row justify-between items-start p-8 md:px-24 md:py-24  gap-4">
       <div class=" ">
         <div class="flex gap-4 items-start text-2xl">
           <Heading1 text="👋" size="2xl" weight="bold" />
