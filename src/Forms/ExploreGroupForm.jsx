@@ -1,19 +1,29 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux/es/exports";
-import { getData, setData } from "../Redux/DataReducer";
+import GroupCard from "../components/GroupCard";
+import { AiFillDelete } from "react-icons/ai";
 
-const CommunityDetForm = () => {
+import { v4 as uuidv4 } from "uuid";
+import { getData, setData } from "../Redux/DataReducer";
+// import GroupSmallCard from "../components/GroupCard";
+
+const initState = {
+  groupName: "New Group 1",
+  groupDesc: "Add a Desc for Group",
+  image: "./images/person-image.jpg",
+};
+
+const ExploreGroupForm = () => {
   const dispatch = useDispatch();
   const Data = useSelector(getData);
   const [img, setImg] = useState(Data.Community.image);
-  const [info, setInfo] = useState({
-    image: Data.Community.image,
-    heading: Data.Community.heading,
-    paragraph: Data.Community.paragraph,
-  });
+
+  const [todo, setTodo] = useState(initState);
+
+  const [info, setInfo] = useState([...Data.ExploreGroup]);
 
   const changeInfo = (e) => {
-    setInfo({ ...info, [e.name]: e.value });
+    setTodo({ ...todo, [e.name]: e.value });
   };
 
   function captureImage(e) {
@@ -22,22 +32,43 @@ const CommunityDetForm = () => {
     reader.readAsDataURL(file);
     reader.onloadend = function () {
       setImg(reader.result);
-      setInfo({ ...info, image: reader.result });
+      setTodo({ ...todo, [e.target.name]: reader.result });
     };
   }
 
-  const submitData = () => {
+  function deleteTodo(id) {
+    let t = info;
+    const newContactList = t.filter((contact) => {
+      return contact.id !== id;
+    });
+
+    setInfo(newContactList);
     dispatch(
       setData({
-        section: "Community",
-        data: info,
+        section: "ExploreGroup",
+        data: newContactList,
+      })
+    );
+  }
+
+  const submitData = () => {
+    let t = info;
+    t = [...t, { id: uuidv4(), ...todo }];
+    setTodo(initState);
+    setInfo([...t]);
+    console.log("info", info);
+
+    dispatch(
+      setData({
+        section: "ExploreGroup",
+        data: t,
       })
     );
   };
 
   return (
     <div>
-      <h1 className="text-xl font-bold py-5">Community Details</h1>
+      <h1 className="text-xl font-bold py-5">Explore Groups</h1>
       <div className="mb-6">
         <div className="flex items-center justify-center">
           <div className="w-36 h-36 rounded-full border-4 border-blue-600 relative flex items-center justify-center overflow-hidden">
@@ -74,8 +105,8 @@ const CommunityDetForm = () => {
         <input
           type="text"
           id="Heading"
-          name="heading"
-          value={info.heading}
+          name="groupName"
+          value={todo.groupName}
           onChange={(e) => changeInfo(e.target)}
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm outline-none focus:border-blue-500 block w-full p-2.5"
         />
@@ -90,8 +121,8 @@ const CommunityDetForm = () => {
         <input
           type="text"
           id="Paragrapgh"
-          name="paragraph"
-          value={info.paragraph}
+          name="groupDesc"
+          value={todo.groupDesc}
           onChange={(e) => changeInfo(e.target)}
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm outline-none focus:border-blue-500 block w-full p-2.5"
         />
@@ -100,10 +131,29 @@ const CommunityDetForm = () => {
         onClick={submitData}
         className="px-8 py-2 shadow-sm rounded-sm bg-gradient-to-tr from-rose-500 to-rose-700 text-white"
       >
-        Done
+        Add
       </button>
+
+      {info.map((contact) => {
+        return (
+          <div
+            className="flex items-center justify-between pt-2"
+            key={contact.id}
+          >
+            <p className="font-sans font-medium text-gray-700">
+              {contact.groupName}
+            </p>
+            <span
+              className="cursor-pointer"
+              onClick={() => deleteTodo(contact.id)}
+            >
+              <AiFillDelete />
+            </span>
+          </div>
+        );
+      })}
     </div>
   );
 };
 
-export default CommunityDetForm;
+export default ExploreGroupForm;
