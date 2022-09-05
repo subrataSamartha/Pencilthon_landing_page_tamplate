@@ -16,6 +16,7 @@ const SideBarSlice = createSlice({
       //   console.log(state.show);
     },
     setFormNo: (state, action) => {
+      console.log(action.payload);
       state.formNo = action.payload;
     },
   },

@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { getShow, getFormNo } from "../Redux/SetBarReducer";
 import CommunityDetForm from "../Forms/CommunityDetForm";
 import ExploreGroupForm from "../Forms/ExploreGroupForm";
+import TestimonialForm from "../Forms/TestimonialForm";
 
 const SideBar = () => {
   const showSideBar = useSelector(getShow);
@@ -13,6 +14,7 @@ const SideBar = () => {
     1: HeroForm,
     2: CommunityDetForm,
     3: ExploreGroupForm,
+    4: TestimonialForm,
   };
   const Form = FormList[formNo];
 

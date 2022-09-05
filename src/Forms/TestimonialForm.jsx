@@ -6,19 +6,21 @@ import { v4 as uuidv4 } from "uuid";
 import { getData, setData } from "../Redux/DataReducer";
 
 const initState = {
-  groupName: "New Group 1",
-  groupDesc: "Add a Desc for Group",
+  name: "Enter Name",
+  desc: "Add a Desc for Group",
   image: "./images/person-image.jpg",
+  course: "Web App Development",
+  rating: 5,
 };
 
-const ExploreGroupForm = () => {
+const TestimonialForm = () => {
   const dispatch = useDispatch();
   const Data = useSelector(getData);
   const [img, setImg] = useState(Data.Community.image);
 
   const [todo, setTodo] = useState(initState);
 
-  const [info, setInfo] = useState([...Data.ExploreGroup]);
+  const [info, setInfo] = useState([...Data.Testimonials]);
 
   const changeInfo = (e) => {
     setTodo({ ...todo, [e.name]: e.value });
@@ -40,10 +42,10 @@ const ExploreGroupForm = () => {
       return contact.id !== id;
     });
 
-    setInfo(newContactList);
+    setInfo([...newContactList]);
     dispatch(
       setData({
-        section: "ExploreGroup",
+        section: "Testimonials",
         data: newContactList,
       })
     );
@@ -54,11 +56,11 @@ const ExploreGroupForm = () => {
     t = [...t, { id: uuidv4(), ...todo }];
     setTodo(initState);
     setInfo([...t]);
-    console.log("info", info);
+    setImg("./images/person-image.jpg");
 
     dispatch(
       setData({
-        section: "ExploreGroup",
+        section: "Testimonials",
         data: t,
       })
     );
@@ -66,7 +68,7 @@ const ExploreGroupForm = () => {
 
   return (
     <div>
-      <h1 className="text-xl font-bold py-5">Explore Groups</h1>
+      <h1 className="text-xl font-bold py-5">Testimonial</h1>
       <div className="mb-6">
         <div className="flex items-center justify-center">
           <div className="w-36 h-36 rounded-full border-4 border-blue-600 relative flex items-center justify-center overflow-hidden">
@@ -103,8 +105,8 @@ const ExploreGroupForm = () => {
         <input
           type="text"
           id="Heading"
-          name="groupName"
-          value={todo.groupName}
+          name="name"
+          value={todo.name}
           onChange={(e) => changeInfo(e.target)}
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm outline-none focus:border-blue-500 block w-full p-2.5"
         />
@@ -119,8 +121,40 @@ const ExploreGroupForm = () => {
         <input
           type="text"
           id="Paragrapgh"
-          name="groupDesc"
-          value={todo.groupDesc}
+          name="desc"
+          value={todo.desc}
+          onChange={(e) => changeInfo(e.target)}
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm outline-none focus:border-blue-500 block w-full p-2.5"
+        />
+      </div>
+      <div className="mb-6">
+        <label
+          htmlFor="Course"
+          className="block mb-2 text-sm font-medium text-gray-900 "
+        >
+          Course
+        </label>
+        <input
+          type="text"
+          id="Course"
+          name="course"
+          value={todo.course}
+          onChange={(e) => changeInfo(e.target)}
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm outline-none focus:border-blue-500 block w-full p-2.5"
+        />
+      </div>
+      <div className="mb-6">
+        <label
+          htmlFor="Rating"
+          className="block mb-2 text-sm font-medium text-gray-900 "
+        >
+          Rating
+        </label>
+        <input
+          type="text"
+          id="Rating"
+          name="rating"
+          value={todo.rating}
           onChange={(e) => changeInfo(e.target)}
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm outline-none focus:border-blue-500 block w-full p-2.5"
         />
@@ -132,26 +166,28 @@ const ExploreGroupForm = () => {
         Add
       </button>
 
-      {info.map((contact) => {
-        return (
-          <div
-            className="flex items-center justify-between pt-2"
-            key={contact.id}
-          >
-            <p className="font-sans font-medium text-gray-700">
-              {contact.groupName}
-            </p>
-            <span
-              className="cursor-pointer"
-              onClick={() => deleteTodo(contact.id)}
+      <div className="py-10">
+        {info.map((contact) => {
+          return (
+            <div
+              className="flex items-center justify-between pt-2"
+              key={contact.id}
             >
-              <AiFillDelete />
-            </span>
-          </div>
-        );
-      })}
+              <p className="font-sans font-medium text-gray-700">
+                {contact.name}
+              </p>
+              <span
+                className="cursor-pointer"
+                onClick={() => deleteTodo(contact.id)}
+              >
+                <AiFillDelete />
+              </span>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
 
-export default ExploreGroupForm;
+export default TestimonialForm;

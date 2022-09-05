@@ -66,7 +66,7 @@ const CommunityDetForm = () => {
       </div>
       <div className="mb-6">
         <label
-          for="Heading"
+          htmlFor="Heading"
           className="block mb-2 text-sm font-medium text-gray-900 "
         >
           Heading
@@ -82,7 +82,7 @@ const CommunityDetForm = () => {
       </div>
       <div className="mb-6">
         <label
-          for="Paragraph"
+          htmlFor="Paragraph"
           className="block mb-2 text-sm font-medium text-gray-900 "
         >
           Paragraph
