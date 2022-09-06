@@ -83,10 +83,12 @@ const Testimonial = () => {
   }, [Data]);
 
   return (
-    <div
-      className="md:h-screen w-full flex justify-center bg-body-color"
-      onClick={sidebarCall}
+    <div 
+     className="relative md:h-screen w-full flex flex-col  items-center bg-body-color"
+      
     >
+      <button onClick={sidebarCall}  className="absolute top-4 right-4 md:p-4 p-3 text-red-primary font-medium rounded-md md:m-2 m-1 transition-all duration-300 ease-in shadow-white-3 bg-gradient-to-tl bg-gradient from-white to-gray-box hover:from-transparent hover:-translate-y-1 hover:to-transparent hover:bg-red-primary hover:text-white  ">Edit</button>
+       <h1 className="text-stone-800 md:text-5xl text-3xl mb-8 font-bold">Testimonials</h1>
       <div className={`cont md:w-9/12 w-full`}>
         <div
           className={`display relative  transition-all duration-500 ease-in`}

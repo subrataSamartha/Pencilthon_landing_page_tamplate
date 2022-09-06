@@ -47,15 +47,15 @@ const TestimonialCard = ({
               <div>
                 <button
                   onClick={goBack}
-                  className="p-4 rounded-md m-2 shadow-white-3 bg-gradient-to-tl from-white to-gray-box "
+                  className="group p-4 rounded-md m-2 shadow-white-3 bg-gradient-to-tl from-white to-gray-box bg-white transition-all duration-300 ease-in hover:from-transparent hover:to-transparent hover:bg-red-primary "
                 >
-                  <AiOutlineArrowLeft className="text-red-primary text-2xl font-semibold" />
+                  <AiOutlineArrowLeft className="text-red-primary text-2xl font-semibold group-hover:text-white" />
                 </button>
                 <button
                   onClick={goNext}
-                  className="p-4 rounded-md m-2 shadow-white-3 bg-gradient-to-tl from-white to-gray-box "
+                  className="group p-4 rounded-md m-2 shadow-white-3 bg-gradient-to-tl from-white to-gray-box bg-white transition-all duration-300 ease-in hover:from-transparent hover:to-transparent hover:bg-red-primary "
                 >
-                  <AiOutlineArrowRight className="text-red-primary text-2xl font-semibold" />
+                  <AiOutlineArrowRight className="text-red-primary text-2xl font-semibold group-hover:text-white" />
                 </button>
               </div>
             </div>
@@ -68,7 +68,7 @@ const TestimonialCard = ({
                   Upwork - Mar 4,2016 - Aug 30, 2021
                 </h1>
               </div>
-              <div className="p-3 flex justify-center flex-wrap text-yellow-400 text-xs rounded-md m-2 shadow-white-3 bg-gradient-to-l from-body-color to-gray-box">
+              <div className="px-2 py-3 flex  flex-wrap text-yellow-400 text-xs rounded-md m-2 shadow-white-3 bg-gradient-to-l from-body-color to-gray-box">
                 <BsStarFill className="m-1" /> <BsStarFill className="m-1" />{" "}
                 <BsStarFill className="m-1" /> <BsStarFill className="m-1" />{" "}
                 <BsStarFill className="m-1" />

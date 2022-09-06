@@ -4,17 +4,19 @@ import { AiFillDelete } from "react-icons/ai";
 
 import { v4 as uuidv4 } from "uuid";
 import { getData, setData } from "../Redux/DataReducer";
-
+import { getShow, setFormNo, setSideBarShow } from "../Redux/SetBarReducer";
 const initState = {
   name: "Enter Name",
   desc: "Add a Desc for Group",
   image: "./images/person-image.jpg",
   course: "Web App Development",
   rating: 5,
+  opc:'0',
 };
 
 const TestimonialForm = () => {
   const dispatch = useDispatch();
+  const showSideBar = useSelector(getShow);
   const Data = useSelector(getData);
   const [img, setImg] = useState(Data.Community.image);
 
@@ -38,10 +40,16 @@ const TestimonialForm = () => {
 
   function deleteTodo(id) {
     let t = info;
-    const newContactList = t.filter((contact) => {
+    var newContactList = t.filter((contact) => {
       return contact.id !== id;
     });
-
+    if(newContactList.length!==0){
+      let temp = {...newContactList[0]};
+      temp = {...temp , ['opc']:'100'};
+      newContactList[0]=temp;
+    }
+  
+  
     setInfo([...newContactList]);
     dispatch(
       setData({
@@ -55,15 +63,31 @@ const TestimonialForm = () => {
     let t = info;
     t = [...t, { id: uuidv4(), ...todo }];
     setTodo(initState);
+
+    if(t.length!==0){// when there was no card and one new card is added then make it's opacity 100 not 0
+      let changeOpc = t[0];
+      changeOpc = {...changeOpc,['opc']:'100'}
+      t[0] = changeOpc;
+      }
     setInfo([...t]);
     setImg("./images/person-image.jpg");
-
+    
+    console.log("check",t);
     dispatch(
       setData({
         section: "Testimonials",
         data: t,
       })
     );
+    sidebarCall();
+  };
+  const sidebarCall = () => {
+    if (showSideBar === "off") {
+      dispatch(setSideBarShow("on"));
+      dispatch(setFormNo(1));
+    } else {
+      dispatch(setSideBarShow("off"));
+    }
   };
 
   return (

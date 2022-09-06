@@ -25,7 +25,9 @@ function ExploreGroup() {
   }, [Data]);
 
   return (
-    <div onClick={sidebarCall}>
+    <div className="w-full relative">
+      <button onClick={sidebarCall} className="absolute top-4 right-4 md:p-4 p-3 text-red-primary font-medium rounded-md md:m-2 m-1 transition-all duration-300 ease-in shadow-white-3 bg-gradient-to-tl bg-gradient from-white to-gray-box hover:from-transparent hover:-translate-y-1 hover:to-transparent hover:bg-red-primary hover:text-white  ">Edit</button>
+
       <div className="p-8 md:p-24 max-w-[1280px] mx-auto">
         <h1 className="text-4xl font-bold">Explore Groups</h1>
         {/* <!-- Group cards --> */}

@@ -4,7 +4,7 @@ import { AiFillDelete } from "react-icons/ai";
 
 import { v4 as uuidv4 } from "uuid";
 import { getData, setData } from "../Redux/DataReducer";
-
+import { getShow, setFormNo, setSideBarShow } from "../Redux/SetBarReducer";
 const initState = {
   groupName: "New Group 1",
   groupDesc: "Add a Desc for Group",
@@ -13,6 +13,7 @@ const initState = {
 
 const ExploreGroupForm = () => {
   const dispatch = useDispatch();
+  const showSideBar = useSelector(getShow);
   const Data = useSelector(getData);
   const [img, setImg] = useState(Data.Community.image);
 
@@ -62,8 +63,16 @@ const ExploreGroupForm = () => {
         data: t,
       })
     );
+    sidebarCall();
   };
-
+  const sidebarCall = () => {
+    if (showSideBar === "off") {
+      dispatch(setSideBarShow("on"));
+      dispatch(setFormNo(1));
+    } else {
+      dispatch(setSideBarShow("off"));
+    }
+  };
   return (
     <div>
       <h1 className="text-xl font-bold py-5">Explore Groups</h1>

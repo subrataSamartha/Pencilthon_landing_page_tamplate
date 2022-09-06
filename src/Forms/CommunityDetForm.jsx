@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux/es/exports";
 import { getData, setData } from "../Redux/DataReducer";
-
+import { getShow, setFormNo, setSideBarShow } from "../Redux/SetBarReducer";
 const CommunityDetForm = () => {
   const dispatch = useDispatch();
+  const showSideBar = useSelector(getShow);
   const Data = useSelector(getData);
   const [img, setImg] = useState(Data.Community.image);
   const [info, setInfo] = useState({
@@ -33,6 +34,16 @@ const CommunityDetForm = () => {
         data: info,
       })
     );
+    sidebarCall();
+  };
+
+  const sidebarCall = () => {
+    if (showSideBar === "off") {
+      dispatch(setSideBarShow("on"));
+      dispatch(setFormNo(1));
+    } else {
+      dispatch(setSideBarShow("off"));
+    }
   };
 
   return (

@@ -10,11 +10,12 @@ module.exports = {
         'black-shadow': '#232323',
         'red-primary': '#ff014f',
         'body-color':'#F0F2F5',
-        'gray-box':'#e2e8ec'
+        'gray-box':'#e2e8ec',
+        'red-solid':'#d11414'
       },
 
       backgroundImage: {
-        "hero-img": "url('../public/images/hero-img.jpg')",
+        "hero-img": "url('../public/images/boy.jpg')",
       },
       dropShadow: {
         'white-3': '5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff',

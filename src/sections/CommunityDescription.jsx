@@ -8,12 +8,12 @@ function CommunityDescription() {
         <div className="flex gap-4 items-start text-2xl">
           <Heading1 text="👋" size="2xl" weight="bold" />
           <div className="flex flex-col text-xl font-medium">
-            <Heading1 text="Welcome to" size="2xl" weight="bold" />
+            <Heading1 text="Welcome to " size="2xl" weight="bold" />
             <Heading1 text="Coders community" size="2xl" weight="bold" />
           </div>
         </div>
       </div>
-      <div className="pl-12 md:pl-0 md:w-[50%]">
+      <div className="pl-12 text-stone-800 md:pl-0 md:w-[50%]">
         <p>
           Welcome to coder community. You might be learning from any place,
           company or resource, we are here to help you. Post any of your doubt

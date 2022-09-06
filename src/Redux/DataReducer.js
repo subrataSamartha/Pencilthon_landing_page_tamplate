@@ -2,13 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   Hero: {
-    heading: "Default",
-    paragraph: "Default",
+    heading: "Hi, I’m Jone Lee UI/UX Designer.",
+    paragraph: "I use animation as a third dimension by which to simplify experiences and kuiding thro each and every interaction. I’m not adding motion just to spruce things up, but doing it in ways that.",
   },
   Community: {
-    image: "./images/person-image.jpg",
-    heading: "Default",
-    paragraph: "Default",
+    image: "./images/jhia.png",
+    heading: "Hi, I’m Jone Lee UI/UX Designer.",
+    paragraph: "I use animation as a third dimension by which to simplify experiences and kuiding thro each and every interaction. I’m not adding motion just to spruce things up, but doing it in ways that.",
   },
   ExploreGroup: [
     {
@@ -16,28 +16,28 @@ const initialState = {
       groupName: "Javascript Community",
       groupDesc:
         "Learn and help from each other. It doesn't matter from where you are learning",
-      image: "./images/1.jpg",
+      image: "./images/tea.jpg",
     },
     {
       id: 2,
       groupName: "Javascript Community",
       groupDesc:
         "Learn and help from each other. It doesn't matter from where you are learning",
-      image: "./images/2.jpg",
+      image: "./images/phone1.jpg",
     },
     {
       id: 3,
       groupName: "Javascript Community",
       groupDesc:
         "Learn and help from each other. It doesn't matter from where you are learning",
-      image: "./images/3.jpg",
+      image: "./images/phone2.jpg",
     },
     {
       id: 4,
       groupName: "Javascript Community",
       groupDesc:
         "Learn and help from each other. It doesn't matter from where you are learning",
-      image: "./images/4.jpg",
+      image: "./images/mic.jpg",
     },
   ],
   Testimonials: [
@@ -45,7 +45,7 @@ const initialState = {
       id: 1,
       name: "swayam",
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr0exUKpwo_bZh4gvbG8iXr8To3Rr18X10pZPU_N6ePVzOxSRd4f15ejgVaDJVtBbzl9U&usqp=CAU",
+        "/images/jhia.png",
       desc: "Swayam op Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione, autem, unde perferendis quos veniam minus tempore nobis recusandae, odio harum totam voluptatum fugiat alias iusto saepe beatae quas! Ullam adipisci placeat soluta?",
       opc: "100",
       course: "Web App Development",
@@ -65,7 +65,7 @@ const initialState = {
       id: 3,
       name: "samartha",
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr0exUKpwo_bZh4gvbG8iXr8To3Rr18X10pZPU_N6ePVzOxSRd4f15ejgVaDJVtBbzl9U&usqp=CAU",
+        "/images/phone1.jpg",
       desc: "Samartha op Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione, autem, unde perferendis quos veniam minus tempore nobis recusandae, odio harum totam voluptatum fugiat alias iusto saepe beatae quas! Ullam adipisci placeat soluta?",
       opc: "0",
       course: "Flutter Development",
