@@ -70,14 +70,14 @@ const TextHighlightForm = () => {
       <div className="mb-6">
         <div
           onClick={toggleColorPalet}
-          className="w-62 rounded-md h-10 bg-gray-400 p-2"
+          className="cursor-pointer shadow-white-3 bg-gradient-to-tl from-white to-gray-box bg-white p-2 mb-4"
         >
           {color.hex}
         </div>
         {showColorPalet && (
-          <div>
-            <ColorPicker
-              width={228}
+          <div className="">
+            <ColorPicker 
+              width={250}
               height={110}
               color={color}
               onChange={setColor}
@@ -89,7 +89,7 @@ const TextHighlightForm = () => {
       </div>
       <button
         onClick={submitData}
-        className="px-8 py-2 shadow-sm rounded-sm bg-gradient-to-tr from-rose-500 to-rose-700 text-white"
+        className="px-8 py-2 shadow-sm rounded-sm bg-gradient-to-tr from-red-primary to-red-solid text-white"
       >
         Done
       </button>

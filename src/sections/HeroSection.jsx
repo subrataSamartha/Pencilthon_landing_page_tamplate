@@ -35,23 +35,27 @@ function HeroSection() {
   };
 
   const sidebarCall = () => {
-    if (showSideBar === "off") {
-      dispatch(setSideBarShow("on"));
-      dispatch(setFormNo(1));
-    } else {
-      dispatch(setSideBarShow("off"));
-    }
+   
+    
+      if (showSideBar === "off") {
+        dispatch(setSideBarShow("on"));
+        dispatch(setFormNo(1));
+      } else {
+        dispatch(setSideBarShow("off"));
+      }
+    
+    
   };
 
   return (
-    <div
-      className="relative max-w-[1280px] mx-auto px-24 py-56 bg-hero-img bg-cover bg-center"
+    <div onClick={sidebarCall}
+      className="relative w-full mx-auto md:px-24 px-4 md:py-56 py-24 bg-hero-img bg-cover bg-center"
       ref={ref}
     >
       {url === "/" && (
         <button
           onClick={sidebarCall}
-          className="absolute top-4 right-4 md:p-4 p-3 text-red-primary font-medium rounded-md md:m-2 m-1 transition-all duration-300 ease-in  bg-gradient-to-br from-body-color to-gray-box hover:from-transparent hover:-translate-y-1 hover:to-transparent hover:bg-red-primary hover:text-white"
+          className="absolute top-4 right-4 md:p-4 p-3 md:text-medium text-sm rounded-md md:m-2 shadow-white-3 text-red-primary bg-gradient-to-tl from-white to-gray-box bg-white transition-all duration-300 ease-in hover:from-transparent  hover:-translate-y-1 hover:to-transparent hover:bg-red-primary hover:text-white"
         >
           Edit
         </button>
@@ -85,12 +89,12 @@ function HeroSection() {
             transition: "all 1.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.7s",
           }}
         >
-          <button className="md:p-4 p-3 text-red-primary font-medium rounded-md md:m-2 m-1 transition-all duration-300 ease-in shadow-white-3 bg-gradient-to-tl bg-gradient from-white to-gray-box hover:from-transparent hover:-translate-y-1 hover:to-transparent hover:bg-red-primary hover:text-white">
+          <button className="md:p-4 p-3 text-red-primary font-medium rounded-md md:m-2 m-1 transition-all duration-300 ease-in shadow-md bg-gradient-to-tl from-body-color to-gray-box hover:from-transparent hover:-translate-y-1 hover:to-transparent hover:bg-red-primary hover:text-white">
             Join Community
           </button>
           <button
             onClick={url === "/" ? navigatePreview : navigateEdit}
-            className="md:p-4 p-3 text-red-primary font-medium rounded-md md:m-2 m-1 transition-all duration-300 ease-in shadow-white-3 bg-gradient-to-tl bg-gradient from-white to-gray-box hover:from-transparent hover:-translate-y-1 hover:to-transparent hover:bg-red-primary hover:text-white"
+            className="md:p-4 p-3 text-red-primary font-medium rounded-md md:m-2 m-1 transition-all duration-300 ease-in shadow-md bg-gradient-to-tl from-body-color to-gray-box hover:from-transparent hover:-translate-y-1 hover:to-transparent hover:bg-red-primary hover:text-white"
           >
             {url === "/" ? "Preview" : "Back To Edit"}
           </button>

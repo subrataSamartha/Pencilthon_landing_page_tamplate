@@ -68,42 +68,6 @@ const CommunityLiveForm = () => {
           className="bg-gray-50 border  outline-none border-gray-300 text-gray-900 text-sm rounded-sm  focus:border-blue-500 block w-full p-2.5"
         />
       </div>
-      <div className="mb-6">
-        <label
-          htmlFor="Embed"
-          className="block mb-2 text-sm font-medium text-gray-900 "
-        >
-          Embed Code
-        </label>
-        <input
-          type="text"
-          id="Embed"
-          name="embed"
-          value={info.embed}
-          onChange={(e) => changeInfo(e.target)}
-          className="bg-gray-50 border outline-none border-gray-300 text-gray-900 text-sm rounded-sm  focus:border-blue-500 block w-full p-2.5"
-        />
-      </div>
-      <div className="mb-6">
-        <div
-          onClick={toggleColorPalet}
-          className="w-62 rounded-md h-10 bg-gray-400 p-2"
-        >
-          {color.hex}
-        </div>
-        {showColorPalet && (
-          <div>
-            <ColorPicker
-              width={228}
-              height={110}
-              color={color}
-              onChange={setColor}
-              hideHSV
-              dark
-            />
-          </div>
-        )}
-      </div>
       <button
         onClick={submitData}
         className="px-8 py-2 shadow-sm rounded-sm bg-gradient-to-tr from-rose-500 to-rose-700 text-white"

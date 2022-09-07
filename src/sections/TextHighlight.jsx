@@ -33,13 +33,13 @@ function TextHighlight() {
     <div
       ref={ref}
       style={{ backgroundColor: Data.TextHighlight.color }}
-      className={`h-[120px] bg-red-solid w-full relative flex items-center mx-auto text-white text-center text-2xl px-8 justify-center`}
+      className={`py-16 mb-8 bg-red-solid w-full relative flex items-center mx-auto text-white text-center  px-8 justify-center`}
     >
       {url === "/" && (
-        <button
-          onClick={sidebarCall}
-          className="absolute top-4 right-4 md:p-2 p-3 text-red-primary font-medium rounded-md md:m-2 m-1 transition-all duration-300 ease-in shadow-white-3 bg-gradient-to-tl bg-gradient from-white to-gray-box hover:from-transparent hover:-translate-y-1 hover:to-transparent hover:bg-red-primary hover:text-white"
-        >
+       <button
+       onClick={sidebarCall}
+       className="absolute top-4 right-4 md:p-4 p-3 md:m-2 md:text-md text-sm  rounded-md  shadow-md text-red-primary bg-gradient-to-tl from-white to-gray-box bg-white transition-all duration-300 ease-in hover:from-transparent  hover:-translate-y-1 hover:to-transparent hover:bg-red-primary hover:text-white"
+     >
           Edit
         </button>
       )}
@@ -49,6 +49,8 @@ function TextHighlight() {
           opacity: isInView ? 1 : 0,
           transition: "all 1.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.1s",
         }}
+
+        className="md:text-3xl text-xl font-semibold"
       >
         {Data.TextHighlight.heading}
       </p>

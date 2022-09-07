@@ -36,19 +36,19 @@ function ExploreGroup() {
   }, [Data]);
 
   return (
-    <div className="w-full relative" ref={ref}>
+    <div className="w-full relative py-8" ref={ref}>
       {url === "/" && (
-        <button
-          onClick={sidebarCall}
-          className="absolute top-4 right-4 md:p-4 p-3 text-red-primary shadow-white-3 font-medium rounded-md md:m-2 m-1 transition-all duration-300 ease-in  bg-gradient-to-br from-body-color to-gray-box hover:from-transparent hover:-translate-y-1 hover:to-transparent hover:bg-red-primary hover:text-white"
-        >
+         <button
+         onClick={sidebarCall}
+         className="absolute top-4 right-4 group md:p-4 p-3 text-red-primary rounded-md md:m-2 shadow-white-3 bg-gradient-to-tl from-white to-gray-box bg-white transition-all duration-300 ease-in hover:from-transparent hover:to-transparent hover:bg-red-primary hover:-translate-y-1  hover:text-white"
+       >
           Edit
         </button>
       )}
 
       <div className="p-8 md:p-24 max-w-[1280px] mx-auto">
         <h1
-          className="text-5xl font-bold text-center text-metal-black"
+          className="md:text-5xl text-4xl font-bold text-center text-metal-black"
           style={{
             transform: isInView ? "none" : "translateY(100px)",
             opacity: isInView ? 1 : 0,

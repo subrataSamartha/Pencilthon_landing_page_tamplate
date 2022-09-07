@@ -63,7 +63,7 @@ const TestimonialForm = () => {
     t = [...t, { id: uuidv4(), ...todo }];
     setTodo(initState);
 
-    if (t.length !== 0) {
+    if (t.length === 1) { 
       // when there was no card and one new card is added then make it's opacity 100 not 0
       let changeOpc = t[0];
       changeOpc = { ...changeOpc, ["opc"]: "100" };

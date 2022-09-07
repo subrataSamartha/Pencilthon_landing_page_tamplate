@@ -39,11 +39,11 @@ function CommunityOwnerDetail() {
   };
 
   return (
-    <div className="w-full relative" ref={ref}>
+    <div className="w-full relative py-14 md:py-2" ref={ref}>
       {url === "/" && (
         <button
           onClick={sidebarCall}
-          className="absolute top-4 right-4 group p-4 text-red-primary rounded-md m-2 shadow-white-3 bg-gradient-to-tl from-white to-gray-box bg-white transition-all duration-300 ease-in hover:from-transparent hover:to-transparent hover:bg-red-primary hover:-translate-y-1  hover:text-white"
+          className="absolute top-4 right-4 group md:p-4 p-3 text-red-primary rounded-md md:m-2 shadow-white-3 bg-gradient-to-tl from-white to-gray-box bg-white transition-all duration-300 ease-in hover:from-transparent hover:to-transparent hover:bg-red-primary hover:-translate-y-1  hover:text-white"
         >
           Edit
         </button>

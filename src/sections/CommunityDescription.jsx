@@ -37,9 +37,9 @@ function CommunityDescription() {
     >
       {url === "/" && (
         <button
-          onClick={sidebarCall}
-          className="absolute top-4 right-4 md:p-4 p-3 text-red-primary font-medium rounded-md md:m-2 m-1 transition-all duration-300 ease-in shadow-white-3  bg-gradient-to-br from-body-color to-gray-box hover:from-transparent hover:-translate-y-1 hover:to-transparent hover:bg-red-primary hover:text-white"
-        >
+        onClick={sidebarCall}
+        className="absolute top-4 right-4 group md:p-4 p-3 text-red-primary rounded-md md:m-2 shadow-white-3 bg-gradient-to-tl from-white to-gray-box bg-white transition-all duration-300 ease-in hover:from-transparent hover:to-transparent hover:bg-red-primary hover:-translate-y-1  hover:text-white"
+      >
           Edit
         </button>
       )}
@@ -55,7 +55,7 @@ function CommunityDescription() {
           {Data.CommunityDescription.heading}
         </h1>
       </div>
-      <div className="pl-12 text-stone-800 md:pl-0 md:w-[50%]">
+      <div className="md:px-12 px-4  text-stone-800 md:pl-0 md:w-[50%]">
         <p
           style={{
             transform: isInView ? "none" : "translateY(150px)",
