@@ -1,24 +1,69 @@
 import React from "react";
 import Heading1 from "../components/Heading1";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
+import { useLocation } from "react-router-dom";
+import { setSideBarShow, setFormNo } from "../Redux/SetBarReducer";
+import { useSelector, useDispatch } from "react-redux";
+import { getShow } from "../Redux/SetBarReducer";
+import { getData } from "../Redux/DataReducer";
 
 function CommunityDescription() {
+  // get location
+  const loc = useLocation();
+  const url = loc.pathname;
+
+  // animation
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  const showSideBar = useSelector(getShow);
+  const Data = useSelector(getData);
+  const dispatch = useDispatch();
+
+  const sidebarCall = () => {
+    if (showSideBar === "off") {
+      dispatch(setSideBarShow("on"));
+      dispatch(setFormNo(6));
+    } else {
+      dispatch(setSideBarShow("off"));
+    }
+  };
+
   return (
-    <div className="w-full shadow-lg bg-gradient-to-br from-gray-box to-white mx-auto flex flex-col md:flex-row justify-between items-start p-8 md:px-24 md:py-24  gap-4">
-      <div className=" ">
-        <div className="flex gap-4 items-start text-2xl">
-          <Heading1 text="👋" size="2xl" weight="bold" />
-          <div className="flex flex-col text-xl font-medium">
-            <Heading1 text="Welcome to " size="2xl" weight="bold" />
-            <Heading1 text="Coders community" size="2xl" weight="bold" />
-          </div>
-        </div>
+    <div
+      ref={ref}
+      className="w-full shadow-lg bg-gradient-to-br relative from-gray-box to-white mx-auto flex flex-col md:flex-row justify-between items-start p-8 md:px-24 md:py-24  gap-4"
+    >
+      {url === "/" && (
+        <button
+          onClick={sidebarCall}
+          className="absolute top-4 right-4 md:p-4 p-3 text-red-primary font-medium rounded-md md:m-2 m-1 transition-all duration-300 ease-in shadow-white-3  bg-gradient-to-br from-body-color to-gray-box hover:from-transparent hover:-translate-y-1 hover:to-transparent hover:bg-red-primary hover:text-white"
+        >
+          Edit
+        </button>
+      )}
+      <div className="flex gap-4 items-start text-2xl">
+        <h1
+          style={{
+            transform: isInView ? "none" : "translateY(150px)",
+            opacity: isInView ? 1 : 0,
+            transition: "all 1.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
+          }}
+          className="text-metal-black text-4xl flex-wrap font-bold font-mono"
+        >
+          {Data.CommunityDescription.heading}
+        </h1>
       </div>
       <div className="pl-12 text-stone-800 md:pl-0 md:w-[50%]">
-        <p>
-          Welcome to coder community. You might be learning from any place,
-          company or resource, we are here to help you. Post any of your doubt
-          and there are other fellow coders along with our team to solve your
-          doubts.
+        <p
+          style={{
+            transform: isInView ? "none" : "translateY(150px)",
+            opacity: isInView ? 1 : 0,
+            transition: "all 1.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.4s",
+          }}
+        >
+          {Data.CommunityDescription.paragraph}
         </p>
       </div>
     </div>

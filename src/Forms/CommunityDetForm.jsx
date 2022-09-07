@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux/es/exports";
 import { getData, setData } from "../Redux/DataReducer";
 import { getShow, setFormNo, setSideBarShow } from "../Redux/SetBarReducer";
+
 const CommunityDetForm = () => {
   const dispatch = useDispatch();
   const showSideBar = useSelector(getShow);

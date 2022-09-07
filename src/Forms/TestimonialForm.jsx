@@ -11,7 +11,7 @@ const initState = {
   image: "./images/person-image.jpg",
   course: "Web App Development",
   rating: 5,
-  opc:'0',
+  opc: "0",
 };
 
 const TestimonialForm = () => {
@@ -43,13 +43,12 @@ const TestimonialForm = () => {
     var newContactList = t.filter((contact) => {
       return contact.id !== id;
     });
-    if(newContactList.length!==0){
-      let temp = {...newContactList[0]};
-      temp = {...temp , ['opc']:'100'};
-      newContactList[0]=temp;
+    if (newContactList.length !== 0) {
+      let temp = { ...newContactList[0] };
+      temp = { ...temp, ["opc"]: "100" };
+      newContactList[0] = temp;
     }
-  
-  
+
     setInfo([...newContactList]);
     dispatch(
       setData({
@@ -64,15 +63,16 @@ const TestimonialForm = () => {
     t = [...t, { id: uuidv4(), ...todo }];
     setTodo(initState);
 
-    if(t.length!==0){// when there was no card and one new card is added then make it's opacity 100 not 0
+    if (t.length !== 0) {
+      // when there was no card and one new card is added then make it's opacity 100 not 0
       let changeOpc = t[0];
-      changeOpc = {...changeOpc,['opc']:'100'}
+      changeOpc = { ...changeOpc, ["opc"]: "100" };
       t[0] = changeOpc;
-      }
+    }
     setInfo([...t]);
     setImg("./images/person-image.jpg");
-    
-    console.log("check",t);
+
+    console.log("check", t);
     dispatch(
       setData({
         section: "Testimonials",
@@ -81,6 +81,7 @@ const TestimonialForm = () => {
     );
     sidebarCall();
   };
+
   const sidebarCall = () => {
     if (showSideBar === "off") {
       dispatch(setSideBarShow("on"));

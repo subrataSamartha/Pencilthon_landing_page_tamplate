@@ -1,24 +1,15 @@
-import SideBar from "./components/SideBar";
-import CommunityDescription from "./sections/CommunityDescription";
-import CommunityLiveFeed from "./sections/CommunityLiveFeed";
-import CommunityOwnerDetail from "./sections/CommunityOwnerDetail";
-import ExploreGroup from "./sections/ExploreGroup";
-import HeroSection from "./sections/HeroSection";
-import Testimonial from "./sections/Testimonial";
-import TextHighlight from "./sections/TextHighlight";
+import Home from "./sections/Home";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Preview from "./sections/Preview";
 
 function App() {
   return (
-    <div className="bg-body-color">
-      <SideBar />
-      <HeroSection />
-      <TextHighlight />
-      <CommunityDescription />
-      <CommunityOwnerDetail />
-      <ExploreGroup />
-      <Testimonial/>
-      {/* <CommunityLiveFeed /> */}
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/preview" element={<Preview />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -23,9 +23,9 @@ const TestimonialCard = ({
       >
         <div className="md:basis-2/5 w-full  p-4  shadow-white-3 bg-gradient-to-br from-gray-box to-white rounded-lg ">
           <div className=" w-full">
-            <div className="w-full rounded-lg h-60 mb-4 overflow-hidden ">
+            <div className="w-full rounded-lg h-60 mb-4 overflow-hidden">
               <img
-                className="w-full transition-transform duration-500 ease-in-out hover:scale-110 "
+                className="w-full transition-transform duration-500 ease-in-out hover:scale-110"
                 src={image}
                 alt=""
               />
@@ -33,7 +33,7 @@ const TestimonialCard = ({
             <h1 className="tracking-wider font-medium text-red-primary text-sm mb-3">
               DEFAULT NAME {opacity}
             </h1>
-            <h1 className="font-semibold text-2xl text-stone-800 mb-2">
+            <h1 className="font-semibold text-2xl text-metal-black capitalize mb-2">
               {name}
             </h1>
             <h1 className="text-sm text-gray-700">{course}</h1>
@@ -63,8 +63,8 @@ const TestimonialCard = ({
           <div className="w-full pt-10 px-8 rounded-xl shadow-white-3 bg-gradient-to-l from-body-color to-gray-box">
             <div className="flex w-full justify-between items-center mb-4">
               <div>
-                <h1 className="text-3xl text-stone-800 mb-3">{course}</h1>
-                <h1 className="text-md gray-600">
+                <h1 className="text-3xl text-metal-black mb-3">{course}</h1>
+                <h1 className="text-md text-gray-500">
                   Upwork - Mar 4,2016 - Aug 30, 2021
                 </h1>
               </div>
@@ -75,7 +75,7 @@ const TestimonialCard = ({
               </div>
             </div>
             <hr className="text-gray-400" />
-            <div className="w-full py-4 text-lg text-stone-600">{desc}</div>
+            <div className="w-full py-4 text-lg text-para-black">{desc}</div>
           </div>
         </div>
       </div>

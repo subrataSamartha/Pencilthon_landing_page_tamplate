@@ -3,14 +3,14 @@ import { useDispatch, useSelector } from "react-redux/es/exports";
 import { getData, setData } from "../Redux/DataReducer";
 import { getShow, setFormNo, setSideBarShow } from "../Redux/SetBarReducer";
 
-const HeroForm = () => {
+const CommunityDescForm = () => {
   const Data = useSelector(getData);
   const showSideBar = useSelector(getShow);
   const dispatch = useDispatch();
 
   const [info, setInfo] = useState({
-    heading: Data.Hero.heading,
-    paragraph: Data.Hero.paragraph,
+    heading: Data.CommunityDescription.heading,
+    paragraph: Data.CommunityDescription.paragraph,
   });
 
   const changeInfo = (e) => {
@@ -20,7 +20,7 @@ const HeroForm = () => {
   const submitData = () => {
     dispatch(
       setData({
-        section: "Hero",
+        section: "CommunityDescription",
         data: info,
       })
     );
@@ -30,7 +30,7 @@ const HeroForm = () => {
   const sidebarCall = () => {
     if (showSideBar === "off") {
       dispatch(setSideBarShow("on"));
-      dispatch(setFormNo(1));
+      dispatch(setFormNo(6));
     } else {
       dispatch(setSideBarShow("off"));
     }
@@ -38,7 +38,7 @@ const HeroForm = () => {
 
   return (
     <div>
-      <h1 className="text-xl font-bold py-5">HeroSection</h1>
+      <h1 className="text-xl font-bold py-5">Community Description</h1>
       <div className="mb-6">
         <label
           htmlFor="Heading"
@@ -82,4 +82,4 @@ const HeroForm = () => {
   );
 };
 
-export default HeroForm;
+export default CommunityDescForm;
