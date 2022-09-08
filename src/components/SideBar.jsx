@@ -8,6 +8,8 @@ import TestimonialForm from "../Forms/TestimonialForm";
 import CommunityLiveForm from "../Forms/CommunityLiveForm";
 import CommunityDescForm from "../Forms/CommunityDescForm";
 import TextHighlightForm from "../Forms/TextHighlightForm";
+import NavbarForm from "../Forms/NavbarForm";
+import FooterForm from "../Forms/FooterForm";
 
 const SideBar = () => {
   const showSideBar = useSelector(getShow);
@@ -21,6 +23,8 @@ const SideBar = () => {
     5: CommunityLiveForm,
     6: CommunityDescForm,
     7: TextHighlightForm,
+    8: NavbarForm,
+    9: FooterForm,
   };
   const Form = FormList[formNo];
 

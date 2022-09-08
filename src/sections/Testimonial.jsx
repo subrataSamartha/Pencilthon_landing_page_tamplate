@@ -26,7 +26,7 @@ const Testimonial = () => {
   const goNext = () => {
     let ind = index === slides.length - 1 ? 0 : index + 1;
     setIndex(ind);
-    
+
     var temp = slides.map((data, indi) => {
       if (indi === ind) {
         return {
@@ -49,7 +49,7 @@ const Testimonial = () => {
         rating: data.rating,
       };
     });
-    console.log(temp);
+    // console.log(temp);
     setSlides(temp);
   };
 
@@ -95,16 +95,15 @@ const Testimonial = () => {
   }, [Data]);
 
   return (
-   
     <div
       className="relative py-5  w-full flex flex-col  items-center bg-body-color"
       ref={ref}
     >
       {url === "/" && (
         <button
-        onClick={sidebarCall}
-        className="absolute top-4 right-4 group md:p-4 p-3 text-red-primary rounded-md md:m-2 shadow-white-3 bg-gradient-to-tl from-white to-gray-box bg-white transition-all duration-300 ease-in hover:from-transparent hover:to-transparent hover:bg-red-primary hover:-translate-y-1  hover:text-white"
-      >
+          onClick={sidebarCall}
+          className="absolute top-4 right-4 group md:p-4 p-3 text-red-primary rounded-md md:m-2 shadow-white-3 bg-gradient-to-tl from-white to-gray-box bg-white transition-all duration-300 ease-in hover:from-transparent hover:to-transparent hover:bg-red-primary hover:-translate-y-1  hover:text-white"
+        >
           Edit
         </button>
       )}
@@ -142,7 +141,7 @@ const Testimonial = () => {
             return (
               <>
                 <TestimonialCard
-                  key={ind}
+                  key={curElem.id}
                   desc={curElem.desc}
                   name={curElem.name}
                   image={curElem.image}
@@ -158,7 +157,6 @@ const Testimonial = () => {
         </div>
       </div>
     </div>
-
   );
 };
 

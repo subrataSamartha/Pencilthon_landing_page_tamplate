@@ -1,7 +1,4 @@
 import React, { useEffect } from "react";
-import Button from "../components/Button";
-import Heading1 from "../components/Heading1";
-import Paragraph from "../components/Paragraph";
 import { setSideBarShow, setFormNo } from "../Redux/SetBarReducer";
 import { useSelector, useDispatch } from "react-redux";
 import { getShow } from "../Redux/SetBarReducer";
@@ -14,7 +11,6 @@ function HeroSection() {
   // get location
   const loc = useLocation();
   const url = loc.pathname;
-  //   console.log("url", url);
 
   // animation
   const ref = useRef(null);
@@ -35,20 +31,17 @@ function HeroSection() {
   };
 
   const sidebarCall = () => {
-   
-    
-      if (showSideBar === "off") {
-        dispatch(setSideBarShow("on"));
-        dispatch(setFormNo(1));
-      } else {
-        dispatch(setSideBarShow("off"));
-      }
-    
-    
+    if (showSideBar === "off") {
+      dispatch(setSideBarShow("on"));
+      dispatch(setFormNo(1));
+    } else {
+      dispatch(setSideBarShow("off"));
+    }
   };
 
   return (
-    <div onClick={sidebarCall}
+    <div
+      //   onClick={sidebarCall}
       className="relative w-full mx-auto md:px-24 px-4 md:py-56 py-24 bg-hero-img bg-cover bg-center"
       ref={ref}
     >

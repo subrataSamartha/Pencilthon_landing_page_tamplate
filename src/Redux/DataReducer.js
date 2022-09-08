@@ -91,6 +91,13 @@ const initialState = {
     heading: "Join Coder Community and unlock new opetunity",
     color: "#d11414",
   },
+  NavbarDetails: {
+    image: "./images/jhia.png",
+    logo: "Katei Zeher",
+  },
+  Footer: {
+    paragraph: "© 2022 Flowbite™. All Rights Reserved.",
+  },
 };
 
 const dataSlice = createSlice({

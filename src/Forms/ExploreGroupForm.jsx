@@ -55,7 +55,7 @@ const ExploreGroupForm = () => {
     t = [...t, { id: uuidv4(), ...todo }];
     setTodo(initState);
     setInfo([...t]);
-    console.log("info", info);
+    // console.log("info", info);
 
     dispatch(
       setData({

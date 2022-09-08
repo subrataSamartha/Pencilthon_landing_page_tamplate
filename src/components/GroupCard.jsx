@@ -1,6 +1,7 @@
 import React from "react";
 
-function GroupCard({ groupName, groupDesc, imgPath }) {
+function GroupCard({ key, groupName, groupDesc, imgPath }) {
+  //   console.log(key, groupName);
   return (
     <div className="group w-full p-4 shadow-white-3 bg-gradient-to-tl bg-gradient from-white to-gray-box  rounded-2xl border border-solid flex flex-col gap-2 drop-shadow-sm hover:drop-shadow-2xl ">
       <div className="w-full overflow-hidden">

@@ -63,7 +63,7 @@ const TestimonialForm = () => {
     t = [...t, { id: uuidv4(), ...todo }];
     setTodo(initState);
 
-    if (t.length === 1) { 
+    if (t.length === 1) {
       // when there was no card and one new card is added then make it's opacity 100 not 0
       let changeOpc = t[0];
       changeOpc = { ...changeOpc, ["opc"]: "100" };
@@ -192,12 +192,9 @@ const TestimonialForm = () => {
       </button>
 
       <div className="py-10">
-        {info.map((contact) => {
+        {info.map((contact, ind) => {
           return (
-            <div
-              className="flex items-center justify-between pt-2"
-              key={contact.id}
-            >
+            <div className="flex items-center justify-between pt-2" key={ind}>
               <p className="font-sans font-medium text-gray-700">
                 {contact.name}
               </p>

@@ -15,11 +15,14 @@ const TestimonialCard = ({
   goNext,
   goBack,
 }) => {
+  //   console.log(key);
   return (
     <>
       <div
         key={key}
-        className={`opacity-${opacity} ${opacity==='100'?'sticky':'absolute'} top-0 w-full flex-none  py-8 flex md:flex-row flex-col transition-all duration-1000 ease-in `}
+        className={`opacity-${opacity} ${
+          opacity === "100" ? "sticky" : "absolute"
+        } top-0 w-full flex-none  py-8 flex md:flex-row flex-col transition-all duration-1000 ease-in `}
       >
         <div className="md:basis-2/5 w-full  p-4  shadow-white-3 bg-gradient-to-br from-gray-box to-white rounded-lg ">
           <div className=" w-full">
