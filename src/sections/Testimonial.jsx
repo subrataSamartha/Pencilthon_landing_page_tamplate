@@ -102,7 +102,7 @@ const Testimonial = () => {
           transition: "all 1.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
         }}
       >
-        WHAT CLIENTS SAY
+        WHAT COMMUNITY MEMBER SAY
       </h3>
       <h1
         className="text-metal-black text-center md:text-5xl text-4xl mb-8 font-bold"

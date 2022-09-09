@@ -1,5 +1,6 @@
 import React from "react";
 import FAQ from "../components/FAQ";
+import AdminAction from "./AdminAction";
 import CommunityDescription from "./CommunityDescription";
 import CommunityLiveFeed from "./CommunityLiveFeed";
 import CommunityOwnerDetail from "./CommunityOwnerDetail";
@@ -23,6 +24,7 @@ const Preview = () => {
       <Testimonial />
       <FAQ />
       <Footer />
+      <AdminAction />
     </div>
   );
 };

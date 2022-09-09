@@ -11,6 +11,7 @@ import Testimonial from "./Testimonial";
 import TextHighlight from "./TextHighlight";
 import { AiOutlineClose } from "react-icons/ai";
 import FAQ from "../components/FAQ";
+import AdminAction from "./AdminAction";
 const Home = () => {
   return (
     <div className="bg-body-color ">
@@ -25,6 +26,7 @@ const Home = () => {
       <Testimonial />
       <FAQ />
       <Footer />
+      <AdminAction />
     </div>
   );
 };

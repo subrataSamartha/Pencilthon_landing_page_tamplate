@@ -9,7 +9,7 @@ const initialState = {
   },
   Community: {
     image: "./images/jhia.png",
-    heading: "Hi, I’m Jone Lee UI/UX Designer.",
+    heading: "I’m John Lee, Teacher by ♥️ and programmer by profession.",
     paragraph:
       "I use animation as a third dimension by which to simplify experiences and kuiding thro each and every interaction. I’m not adding motion just to spruce things up, but doing it in ways that.",
   },
@@ -23,14 +23,14 @@ const initialState = {
     },
     {
       id: 2,
-      groupName: "Javascript Community",
+      groupName: "Mobile App Development",
       groupDesc:
         "Learn and help from each other. It doesn't matter from where you are learning",
       image: "./images/phone1.jpg",
     },
     {
       id: 3,
-      groupName: "Javascript Community",
+      groupName: "UI/UX Community",
       groupDesc:
         "Learn and help from each other. It doesn't matter from where you are learning",
       image: "./images/phone2.jpg",
@@ -46,27 +46,27 @@ const initialState = {
   FrequentlyAskedQuestion: [
     {
       id: 1,
-      question: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      question: "Is there free trail available?",
       answer:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt voluptate dicta quo officiis explicabo consequuntur distinctio corporis earum similique!",
+        "Yes, u can try for 30 days login to the site and apply for trail without card",
     },
     {
       id: 2,
-      question: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      question: "Can I allow my friend to access content?",
       answer:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt voluptate dicta quo officiis explicabo consequuntur distinctio corporis earum similique!",
+        "Yes, u can try for 30 days login to the site and apply for trail without card",
     },
     {
       id: 3,
-      question: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      question: "How to ask questions in the group?",
       answer:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt voluptate dicta quo officiis explicabo consequuntur distinctio corporis earum similique!",
+        "Yes, u can try for 30 days login to the site and apply for trail without card",
     },
   ],
   Testimonials: [
     {
       id: 1,
-      name: "swayam",
+      name: "swayam Prakash Sahoo",
       image: "/images/jhia.png",
       desc: "Swayam op Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione, autem, unde perferendis quos veniam minus tempore nobis recusandae, odio harum totam voluptatum fugiat alias iusto saepe beatae quas! Ullam adipisci placeat soluta?",
       opc: "100",
@@ -75,7 +75,7 @@ const initialState = {
     },
     {
       id: 2,
-      name: "chandan",
+      name: "chandan Sahoo",
       image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr0exUKpwo_bZh4gvbG8iXr8To3Rr18X10pZPU_N6ePVzOxSRd4f15ejgVaDJVtBbzl9U&usqp=CAU",
       desc: "Chandan op Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione, autem, unde perferendis quos veniam minus tempore nobis recusandae, odio harum totam voluptatum fugiat alias iusto saepe beatae quas! Ullam adipisci placeat soluta?",
@@ -85,7 +85,7 @@ const initialState = {
     },
     {
       id: 3,
-      name: "samartha",
+      name: "Subrata Samartha",
       image: "/images/phone1.jpg",
       desc: "Samartha op Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione, autem, unde perferendis quos veniam minus tempore nobis recusandae, odio harum totam voluptatum fugiat alias iusto saepe beatae quas! Ullam adipisci placeat soluta?",
       opc: "0",
@@ -109,15 +109,15 @@ const initialState = {
       "Welcome to coder community. You might be learning from any place, company or resource, we are here to help you. Post any of your doubt and there are other fellow coders along with our team to solve your doubts.",
   },
   TextHighlight: {
-    heading: "Join Coder Community and unlock new opetunity",
+    heading: "Join Designers Community and unlock new opportunity",
     color: "#d11414",
   },
   NavbarDetails: {
-    image: "./images/jhia.png",
-    logo: "Katei Zeher",
+    image: "./images/design-community-logo.png",
+    logo: "Design Community",
   },
   Footer: {
-    paragraph: "© 2022 Flowbite™. All Rights Reserved.",
+    paragraph: "© 2022 Coder Community™. All Rights Reserved.",
   },
 };
 
