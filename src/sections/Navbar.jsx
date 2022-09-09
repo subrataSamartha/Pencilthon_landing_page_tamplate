@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getShow } from "../Redux/SetBarReducer";
 import { getData } from "../Redux/DataReducer";
 import { useLocation } from "react-router-dom";
-import {AiOutlineClose} from 'react-icons/ai';
+import { AiOutlineClose } from "react-icons/ai";
 const Navbar = () => {
   // get location
   const loc = useLocation();
@@ -25,17 +25,23 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="bg-body-color px-2 sm:px-4 py-6  w-full z-20 relative top-0 left-0 border-b border-gray-200 ">
+      <nav className="bg-body-color py-6  w-full z-20 relative top-0 left-0 border-b border-gray-200">
         {url === "/" && (
           <button
             onClick={sidebarCall}
             className="absolute top-4 right-4 group md:p-4 p-3 text-red-primary rounded-md md:m-2 shadow-white-3 bg-gradient-to-tl from-white to-gray-box bg-white transition-all duration-300 ease-in hover:from-transparent hover:to-transparent hover:bg-red-primary hover:-translate-y-1  hover:text-white"
           >
-           <span className={`${showSideBar === 'on'?'hidden':'inline'}`}>Edit</span> 
-           <AiOutlineClose className={`text-red-primary text-2xl ${showSideBar === 'off'?'hidden':'block'}`}/>
+            <span className={`${showSideBar === "on" ? "hidden" : "inline"}`}>
+              Edit
+            </span>
+            <AiOutlineClose
+              className={`text-red-primary text-2xl ${
+                showSideBar === "off" ? "hidden" : "block"
+              }`}
+            />
           </button>
         )}
-        <div className="container md:px-10  flex flex-wrap justify-between items-center mx-auto">
+        <div className="container xl:px-0 flex flex-wrap justify-between items-center mx-auto px-5 md:px-12 ">
           <a href="/" className="flex items-center">
             <img
               src={Data.NavbarDetails.image}

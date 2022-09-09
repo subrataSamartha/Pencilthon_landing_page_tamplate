@@ -45,7 +45,7 @@ function HeroSection() {
       style={{
         backgroundImage: `url(${Data.Hero.image})`,
       }}
-      className="relative w-full mx-auto md:px-24 px-4 md:py-56 py-24 bg-cover bg-center"
+      className="relative w-full mx-auto  px-4 md:px-12 md:py-56 py-24 bg-cover bg-center"
       ref={ref}
     >
       {url === "/" && (
@@ -64,43 +64,45 @@ function HeroSection() {
         </button>
       )}
 
-      <div className="max-w-[540px] flex flex-col gap-4 text-white">
-        <h1
-          className="text-4xl font-bold text-metal-black"
-          style={{
-            transform: isInView ? "none" : "translateY(150px)",
-            opacity: isInView ? 1 : 0,
-            transition: "all 1.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
-          }}
-        >
-          {Data.Hero.heading}
-        </h1>
-        <p
-          className="text-para-black"
-          style={{
-            transform: isInView ? "none" : "translateY(150px)",
-            opacity: isInView ? 1 : 0,
-            transition: "all 1.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-          }}
-        >
-          {Data.Hero.paragraph}
-        </p>
-        <div
-          style={{
-            transform: isInView ? "none" : "translateY(150px)",
-            opacity: isInView ? 1 : 0,
-            transition: "all 1.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.7s",
-          }}
-        >
-          <button className="md:p-4 p-3 text-red-primary font-medium rounded-md md:m-2 m-1 transition-all duration-300 ease-in shadow-md bg-gradient-to-tl from-body-color to-gray-box hover:from-transparent hover:-translate-y-1 hover:to-transparent hover:bg-red-primary hover:text-white">
-            Join Community
-          </button>
-          <button
-            onClick={url === "/" ? navigatePreview : navigateEdit}
-            className="md:p-4 p-3 text-red-primary font-medium rounded-md md:m-2 m-1 transition-all duration-300 ease-in shadow-md bg-gradient-to-tl from-body-color to-gray-box hover:from-transparent hover:-translate-y-1 hover:to-transparent hover:bg-red-primary hover:text-white"
+      <div className="container mx-auto">
+        <div className="max-w-[540px] flex flex-col gap-4 text-white">
+          <h1
+            className="text-4xl font-bold text-metal-black"
+            style={{
+              transform: isInView ? "none" : "translateY(150px)",
+              opacity: isInView ? 1 : 0,
+              transition: "all 1.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s",
+            }}
           >
-            {url === "/" ? "Preview" : "Back To Edit"}
-          </button>
+            {Data.Hero.heading}
+          </h1>
+          <p
+            className="text-para-black"
+            style={{
+              transform: isInView ? "none" : "translateY(150px)",
+              opacity: isInView ? 1 : 0,
+              transition: "all 1.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            }}
+          >
+            {Data.Hero.paragraph}
+          </p>
+          <div
+            style={{
+              transform: isInView ? "none" : "translateY(150px)",
+              opacity: isInView ? 1 : 0,
+              transition: "all 1.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.7s",
+            }}
+          >
+            <button className="md:p-4 p-3 text-red-primary font-medium rounded-md md:m-2 m-1 transition-all duration-300 ease-in shadow-md bg-gradient-to-tl from-body-color to-gray-box hover:from-transparent hover:-translate-y-1 hover:to-transparent hover:bg-red-primary hover:text-white">
+              Join Community
+            </button>
+            <button
+              onClick={url === "/" ? navigatePreview : navigateEdit}
+              className="md:p-4 p-3 text-red-primary font-medium rounded-md md:m-2 m-1 transition-all duration-300 ease-in shadow-md bg-gradient-to-tl from-body-color to-gray-box hover:from-transparent hover:-translate-y-1 hover:to-transparent hover:bg-red-primary hover:text-white"
+            >
+              {url === "/" ? "Preview" : "Back To Edit"}
+            </button>
+          </div>
         </div>
       </div>
     </div>

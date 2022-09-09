@@ -40,7 +40,7 @@ const Footer = () => {
           />
         </button>
       )}
-      <footer className="p-4 md:px-12 md:py-10 bg-white rounded-lg shadow md:flex md:items-center md:p-6">
+      <footer className="p-4 md:px-12 md:py-10 bg-white rounded-lg shadow flex justify-center items-center md:p-6">
         <span className="text-sm text-gray-500 sm:text-center mx-auto">
           {Data.Footer.paragraph}
         </span>

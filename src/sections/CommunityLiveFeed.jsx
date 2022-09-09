@@ -55,15 +55,17 @@ function CommunityLiveFeed() {
         </button>
       )}
 
-      <div className="w-full md:w-1/2">
-        <h1 className=" text-4xl text-metal-black font-bold">
-          {Data.CommunityLive.heading}
-        </h1>
-      </div>
+      <div className="container mx-auto flex flex-col md:flex-row items-center text-center md:text-left">
+        <div className="w-full md:w-1/2 flex justify-center">
+          <h1 className=" text-4xl text-metal-black font-bold">
+            {Data.CommunityLive.heading}
+          </h1>
+        </div>
 
-      <div className="w-full md:w-1/2 mt-12 md:mt-0">
-        {/* {info.embed} */}
-        <embed height="400px" width="100%" src={s} type="text/html"></embed>
+        <div className="w-full md:w-1/2 mt-12 md:mt-0">
+          {/* {info.embed} */}
+          <embed height="400px" width="100%" src={s} type="text/html"></embed>
+        </div>
       </div>
     </div>
   );
