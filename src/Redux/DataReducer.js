@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   Hero: {
+    image: "./images/boy.jpg",
     heading: "Hi, I’m Jone Lee UI/UX Designer.",
     paragraph:
       "I use animation as a third dimension by which to simplify experiences and kuiding thro each and every interaction. I’m not adding motion just to spruce things up, but doing it in ways that.",
@@ -40,6 +41,26 @@ const initialState = {
       groupDesc:
         "Learn and help from each other. It doesn't matter from where you are learning",
       image: "./images/mic.jpg",
+    },
+  ],
+  FrequentlyAskedQuestion: [
+    {
+      id: 1,
+      question: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      answer:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt voluptate dicta quo officiis explicabo consequuntur distinctio corporis earum similique!",
+    },
+    {
+      id: 2,
+      question: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      answer:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt voluptate dicta quo officiis explicabo consequuntur distinctio corporis earum similique!",
+    },
+    {
+      id: 3,
+      question: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      answer:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt voluptate dicta quo officiis explicabo consequuntur distinctio corporis earum similique!",
     },
   ],
   Testimonials: [

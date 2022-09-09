@@ -8,14 +8,27 @@ const HeroForm = () => {
   const showSideBar = useSelector(getShow);
   const dispatch = useDispatch();
 
+  const [img, setImg] = useState(Data.Community.image);
+
   const [info, setInfo] = useState({
     heading: Data.Hero.heading,
     paragraph: Data.Hero.paragraph,
+    image: Data.Hero.image,
   });
 
   const changeInfo = (e) => {
     setInfo({ ...info, [e.name]: e.value });
   };
+
+  function captureImage(e) {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = function () {
+      setImg(reader.result);
+      setInfo({ ...info, [e.target.name]: reader.result });
+    };
+  }
 
   const submitData = () => {
     dispatch(
@@ -39,6 +52,32 @@ const HeroForm = () => {
   return (
     <div>
       <h1 className="text-xl font-bold py-5">HeroSection</h1>
+      <div className="mb-6">
+        <div className="flex flex-col items-center justify-center">
+          <div className="w-36 h-36 border-8 border-body-color shadow-lg relative flex items-center justify-center overflow-hidden">
+            <img
+              className="h-36 w-36 rounded-sm bg-cover"
+              src={img}
+              alt="avatar"
+            />
+            <div className="absolute top-11">
+              <input
+                onChange={captureImage}
+                type="file"
+                id="avatarInput"
+                name="image"
+                className="hidden"
+              />
+            </div>
+          </div>
+          <label
+            htmlFor="avatarInput"
+            className="my-5 text-sm font-medium inline-block cursor-pointer px-4 py-2 border border-rose-500 bg-white text-red-primary rounded-sm mt-2"
+          >
+            Upload
+          </label>
+        </div>
+      </div>
       <div className="mb-6">
         <label
           htmlFor="Heading"

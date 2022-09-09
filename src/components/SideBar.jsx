@@ -10,6 +10,7 @@ import CommunityDescForm from "../Forms/CommunityDescForm";
 import TextHighlightForm from "../Forms/TextHighlightForm";
 import NavbarForm from "../Forms/NavbarForm";
 import FooterForm from "../Forms/FooterForm";
+import FAQForm from "../Forms/FAQForm";
 
 const SideBar = () => {
   const showSideBar = useSelector(getShow);
@@ -25,6 +26,7 @@ const SideBar = () => {
     7: TextHighlightForm,
     8: NavbarForm,
     9: FooterForm,
+    10: FAQForm,
   };
   const Form = FormList[formNo];
 

@@ -6,7 +6,7 @@ import { getShow, setFormNo, setSideBarShow } from "../Redux/SetBarReducer";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 import { useLocation } from "react-router-dom";
-import {AiOutlineClose} from 'react-icons/ai';
+import { AiOutlineClose } from "react-icons/ai";
 const Testimonial = () => {
   // get location
   const loc = useLocation();
@@ -27,17 +27,18 @@ const Testimonial = () => {
     let ind = index >= slides.length - 1 ? 0 : index + 1;
     setIndex(ind);
     var temp = slides.map((data, indi) => {
-
       if (indi === ind) {
         return {
-          ...data, ['opc']:'100'
+          ...data,
+          ["opc"]: "100",
         };
       }
       return {
-        ...data, ['opc']:'0'
+        ...data,
+        ["opc"]: "0",
       };
     });
-    // console.log(temp);
+
     setSlides(temp);
   };
 
@@ -47,12 +48,14 @@ const Testimonial = () => {
     var temp = slides.map((data, indi) => {
       if (indi === ind) {
         return {
-         ...data,["opc"]:'100',
-        }
+          ...data,
+          ["opc"]: "100",
+        };
       }
       return {
-      ...data , ["opc"]:'0'
-      }
+        ...data,
+        ["opc"]: "0",
+      };
     });
     setSlides(temp);
   };
@@ -72,16 +75,22 @@ const Testimonial = () => {
 
   return (
     <div
-      className="relative py-5  w-full flex flex-col  items-center bg-body-color"
+      className="relative pt-10 pb-10 md:pt-20 w-full flex flex-col items-center bg-body-color"
       ref={ref}
     >
       {url === "/" && (
-          <button
+        <button
           onClick={sidebarCall}
           className="absolute top-4 right-4 group md:p-4 p-3 text-red-primary rounded-md md:m-2 shadow-white-3 bg-gradient-to-tl from-white to-gray-box bg-white transition-all duration-300 ease-in hover:from-transparent hover:to-transparent hover:bg-red-primary hover:-translate-y-1  hover:text-white"
         >
-         <span className={`${showSideBar === 'on'?'hidden':'inline'}`}>Edit</span> 
-         <AiOutlineClose className={`text-red-primary text-2xl ${showSideBar === 'off'?'hidden':'block'}`}/>
+          <span className={`${showSideBar === "on" ? "hidden" : "inline"}`}>
+            Edit
+          </span>
+          <AiOutlineClose
+            className={`text-red-primary text-2xl ${
+              showSideBar === "off" ? "hidden" : "block"
+            }`}
+          />
         </button>
       )}
 
