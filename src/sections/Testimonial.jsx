@@ -6,7 +6,7 @@ import { getShow, setFormNo, setSideBarShow } from "../Redux/SetBarReducer";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 import { useLocation } from "react-router-dom";
-
+import {AiOutlineClose} from 'react-icons/ai';
 const Testimonial = () => {
   // get location
   const loc = useLocation();
@@ -24,29 +24,17 @@ const Testimonial = () => {
   const [index, setIndex] = useState(0);
 
   const goNext = () => {
-    let ind = index === slides.length - 1 ? 0 : index + 1;
+    let ind = index >= slides.length - 1 ? 0 : index + 1;
     setIndex(ind);
-
     var temp = slides.map((data, indi) => {
+
       if (indi === ind) {
         return {
-          id: data.id,
-          image: data.image,
-          name: data.name,
-          opc: "100",
-          desc: data.desc,
-          course: data.course,
-          rating: data.rating,
+          ...data, ['opc']:'100'
         };
       }
       return {
-        id: data.id,
-        image: data.image,
-        name: data.name,
-        opc: "0",
-        desc: data.desc,
-        course: data.course,
-        rating: data.rating,
+        ...data, ['opc']:'0'
       };
     });
     // console.log(temp);
@@ -54,29 +42,17 @@ const Testimonial = () => {
   };
 
   const goBack = () => {
-    let ind = index === 0 ? slides.length - 1 : index - 1;
+    let ind = index <= 0 ? slides.length - 1 : index - 1;
     setIndex(ind);
     var temp = slides.map((data, indi) => {
       if (indi === ind) {
         return {
-          id: data.id,
-          image: data.image,
-          name: data.name,
-          opc: "100",
-          desc: data.desc,
-          course: data.course,
-          rating: data.rating,
-        };
+         ...data,["opc"]:'100',
+        }
       }
       return {
-        id: data.id,
-        image: data.image,
-        name: data.name,
-        opc: "0",
-        desc: data.desc,
-        course: data.course,
-        rating: data.rating,
-      };
+      ...data , ["opc"]:'0'
+      }
     });
     setSlides(temp);
   };
@@ -100,11 +76,12 @@ const Testimonial = () => {
       ref={ref}
     >
       {url === "/" && (
-        <button
+          <button
           onClick={sidebarCall}
           className="absolute top-4 right-4 group md:p-4 p-3 text-red-primary rounded-md md:m-2 shadow-white-3 bg-gradient-to-tl from-white to-gray-box bg-white transition-all duration-300 ease-in hover:from-transparent hover:to-transparent hover:bg-red-primary hover:-translate-y-1  hover:text-white"
         >
-          Edit
+         <span className={`${showSideBar === 'on'?'hidden':'inline'}`}>Edit</span> 
+         <AiOutlineClose className={`text-red-primary text-2xl ${showSideBar === 'off'?'hidden':'block'}`}/>
         </button>
       )}
 
@@ -139,9 +116,9 @@ const Testimonial = () => {
         <div className={`display relative transition-all duration-500 ease-in`}>
           {slides.map((curElem, ind) => {
             return (
-              <>
+              <div key={ind}>
                 <TestimonialCard
-                  key={curElem.id}
+                  id={curElem.id}
                   desc={curElem.desc}
                   name={curElem.name}
                   image={curElem.image}
@@ -151,7 +128,7 @@ const Testimonial = () => {
                   goNext={goNext}
                   goBack={goBack}
                 />
-              </>
+              </div>
             );
           })}
         </div>

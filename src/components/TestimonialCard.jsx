@@ -5,7 +5,7 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 import { BsStarFill } from "react-icons/bs";
 
 const TestimonialCard = ({
-  key,
+  id,
   name,
   desc,
   image,
@@ -19,7 +19,7 @@ const TestimonialCard = ({
   return (
     <>
       <div
-        key={key}
+        key = {id}
         className={`opacity-${opacity} ${
           opacity === "100" ? "sticky" : "absolute"
         } top-0 w-full flex-none  py-8 flex md:flex-row flex-col transition-all duration-1000 ease-in `}

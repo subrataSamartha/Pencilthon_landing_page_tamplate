@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { getData, setData } from "../Redux/DataReducer";
-import { ColorPicker, useColor } from "react-color-palette";
 import "react-color-palette/lib/css/styles.css";
 import { useDispatch, useSelector } from "react-redux/es/exports";
 import { getShow, setFormNo, setSideBarShow } from "../Redux/SetBarReducer";
@@ -12,21 +11,16 @@ const CommunityLiveForm = () => {
 
   const [info, setInfo] = useState({
     heading: Data.CommunityLive.heading,
-    color: Data.CommunityLive.color,
     embed: Data.CommunityLive.embed,
   });
-
-  const [color, setColor] = useColor("hex", "#9b0e81");
-  const [showColorPalet, setShowColorPalet] = useState(false);
 
   const changeInfo = (e) => {
     setInfo({ ...info, [e.name]: e.value });
   };
 
   const submitData = () => {
-    let hx = color.hex;
-    let temp = { ...info, ["color"]: hx };
-    setInfo({ ...info, ["color"]: hx });
+   var temp = {...info};
+
     dispatch(
       setData({
         section: "CommunityLive",
@@ -45,9 +39,7 @@ const CommunityLiveForm = () => {
     }
   };
 
-  function toggleColorPalet() {
-    setShowColorPalet(!showColorPalet);
-  }
+
 
   return (
     <div>

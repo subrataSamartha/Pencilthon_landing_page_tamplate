@@ -40,20 +40,27 @@ const TestimonialForm = () => {
 
   function deleteTodo(id) {
     let t = info;
+
     var newContactList = t.filter((contact) => {
       return contact.id !== id;
     });
-    if (newContactList.length !== 0) {
-      let temp = { ...newContactList[0] };
-      temp = { ...temp, ["opc"]: "100" };
-      newContactList[0] = temp;
-    }
-
-    setInfo([...newContactList]);
+    // if (newContactList.length !== 0) {
+    //   let temp = { ...newContactList[0] };
+    //   temp = { ...temp, ["opc"]: "100" };
+    //   newContactList[0] = temp;
+    // }
+    var temp = newContactList.map((curElem, ind) => {
+      if (ind == 0) {
+        return { ...curElem, ["opc"]: "100" };
+      }
+      return { ...curElem };
+    });
+    console.log("ondelete", temp);
+    setInfo([...temp]);
     dispatch(
       setData({
         section: "Testimonials",
-        data: newContactList,
+        data: temp,
       })
     );
   }
@@ -95,13 +102,9 @@ const TestimonialForm = () => {
     <div>
       <h1 className="text-xl font-bold py-5">Testimonial</h1>
       <div className="mb-6">
-        <div className="flex items-center justify-center">
-          <div className="w-36 h-36 rounded-full border-4 border-blue-600 relative flex items-center justify-center overflow-hidden">
-            <img
-              className="h-36 w-36 rounded-3xl bg-cover"
-              src={img}
-              alt="avatar"
-            />
+        <div className="flex flex-col items-center justify-center">
+          <div className="w-36 h-36 rounded-full  border-8 border-body-color shadow-lg relative flex items-center justify-center overflow-hidden">
+            <img className="h-36 w-36  bg-cover" src={img} alt="avatar" />
             <div className="absolute top-11">
               <input
                 onChange={captureImage}
@@ -110,14 +113,14 @@ const TestimonialForm = () => {
                 name="image"
                 className="hidden"
               />
-              <label
-                htmlFor="avatarInput"
-                className="my-10 inline-block cursor-pointer px-4 py-2 bg-myPrimary text-white rounded mt-2"
-              >
-                Upload
-              </label>
             </div>
           </div>
+          <label
+            htmlFor="avatarInput"
+            className="my-5 text-sm font-medium inline-block cursor-pointer px-4 py-2 border border-rose-500 bg-white text-red-primary rounded-sm mt-2"
+          >
+            Upload
+          </label>
         </div>
       </div>
       <div className="mb-6">

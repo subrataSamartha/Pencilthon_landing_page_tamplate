@@ -9,12 +9,13 @@ import HeroSection from "./HeroSection";
 import Navbar from "./Navbar";
 import Testimonial from "./Testimonial";
 import TextHighlight from "./TextHighlight";
-
+import {AiOutlineClose} from 'react-icons/ai';
 const Home = () => {
   return (
     <div className="bg-body-color ">
-      <Navbar/>
+      
       <SideBar />
+      <Navbar/>
       <HeroSection />
       <TextHighlight />
       <CommunityDescription />

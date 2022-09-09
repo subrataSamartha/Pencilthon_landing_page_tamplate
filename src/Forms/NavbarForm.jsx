@@ -51,8 +51,8 @@ const NavbarForm = () => {
     <div>
       <h1 className="text-xl font-bold py-5">Navbar</h1>
       <div className="mb-6">
-        <div className="flex items-center justify-center">
-          <div className="w-36 h-36 rounded-full border-4 border-blue-600 relative flex items-center justify-center overflow-hidden">
+        <div className="flex flex-col items-center justify-center">
+          <div className="w-36 h-36 rounded-full border-8 border-body-color shadow-lg relative flex items-center justify-center overflow-hidden">
             <img
               className="h-36 w-36 rounded-3xl bg-cover"
               src={img}
@@ -66,14 +66,14 @@ const NavbarForm = () => {
                 name="image"
                 className="hidden"
               />
-              <label
-                htmlFor="avatarInput"
-                className="my-10 inline-block cursor-pointer px-4 py-2 bg-myPrimary text-white rounded mt-2"
-              >
-                Upload
-              </label>
             </div>
           </div>
+          <label
+            htmlFor="avatarInput"
+            className="my-5 inline-block cursor-pointer px-4 py-2 border border-rose-500 bg-white text-sm font-medium text-red-primary  rounded-sm mt-2"
+          >
+            Upload
+          </label>
         </div>
       </div>
       <div className="mb-6">

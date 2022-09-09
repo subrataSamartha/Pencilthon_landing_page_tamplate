@@ -40,7 +40,7 @@ const SideBar = () => {
 
   return (
     <div
-      className={`w-72 scrollbar  fixed  h-screen overflow-y-scroll bg-white z-50 ${ableClass}  shadow-2xl px-4  pb-4 transition-all duration-500 `}
+      className={`w-72 scrollbar top-0  fixed  h-screen overflow-y-scroll bg-white z-50 ${ableClass}  shadow-2xl px-4  pb-4 transition-all duration-500 `}
     >
       <Form />
     </div>
