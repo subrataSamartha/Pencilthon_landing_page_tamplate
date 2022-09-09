@@ -17,17 +17,19 @@ function AdminAction() {
   };
 
   return (
-    <div className="container mx-auto flex flex-row justify-center p-12 bg-black">
-      <button
-        onClick={url === "/" ? navigatePreview : navigateEdit}
-        className="md:p-4 p-3 text-red-primary font-medium rounded-md md:m-2 m-1 transition-all duration-300 ease-in shadow-md bg-gradient-to-tl from-body-color to-gray-box hover:from-transparent hover:-translate-y-1 hover:to-transparent hover:bg-red-primary hover:text-white"
-      >
-        {url === "/" ? "Preview" : "Back To Edit"}
-      </button>
+    <div className="w-full bg-black">
+      <div className="container mx-auto flex flex-row justify-center p-12 bg-black">
+        <button
+          onClick={url === "/" ? navigatePreview : navigateEdit}
+          className="md:p-4 p-3 text-red-primary font-medium rounded-md md:m-2 m-1 transition-all duration-300 ease-in shadow-md bg-gradient-to-tl from-body-color to-gray-box hover:from-transparent hover:-translate-y-1 hover:to-transparent hover:bg-red-primary hover:text-white"
+        >
+          {url === "/" ? "Preview" : "Back To Edit"}
+        </button>
 
-      <button className="md:p-4 p-3 text-red-primary font-medium rounded-md md:m-2 m-1 transition-all duration-300 ease-in shadow-md bg-gradient-to-tl from-body-color to-gray-box hover:from-transparent hover:-translate-y-1 hover:to-transparent hover:bg-red-primary hover:text-white">
-        Publish
-      </button>
+        <button className="md:p-4 p-3 text-red-primary font-medium rounded-md md:m-2 m-1 transition-all duration-300 ease-in shadow-md bg-gradient-to-tl from-body-color to-gray-box hover:from-transparent hover:-translate-y-1 hover:to-transparent hover:bg-red-primary hover:text-white">
+          Publish
+        </button>
+      </div>
     </div>
   );
 }
