@@ -52,6 +52,7 @@ const HeroForm = () => {
   return (
     <div>
       <h1 className="text-xl font-bold py-5">HeroSection</h1>
+      <div className="h-px bg-iceblue w-full mb-5"></div>
       <div className="mb-6">
         <div className="flex flex-col items-center justify-center">
           <div className="w-36 h-36 border-8 border-body-color shadow-lg relative flex items-center justify-center overflow-hidden">
@@ -85,6 +86,7 @@ const HeroForm = () => {
         >
           Heading
         </label>
+
         <input
           type="text"
           id="Heading"
