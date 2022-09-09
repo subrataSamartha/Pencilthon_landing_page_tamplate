@@ -39,6 +39,7 @@ const HeroForm = () => {
   return (
     <div>
       <h1 className="text-xl font-bold py-5">HeroSection</h1>
+      <div className="h-px bg-iceblue w-full mb-5"></div>
       <div className="mb-6">
         <label
           htmlFor="Heading"
@@ -46,6 +47,7 @@ const HeroForm = () => {
         >
           Heading
         </label>
+
         <input
           type="text"
           id="Heading"

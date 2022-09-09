@@ -50,6 +50,7 @@ const CommunityDetForm = () => {
   return (
     <div>
       <h1 className="text-xl font-bold py-5">Community Details</h1>
+      <div className="h-px bg-iceblue w-full mb-5"></div>
       <div className="mb-6">
         <div className="flex flex-col items-center justify-center">
           <div className="w-36 h-36 rounded-full border-8 border-body-color relative flex items-center justify-center overflow-hidden">

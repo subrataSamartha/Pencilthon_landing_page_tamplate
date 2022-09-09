@@ -39,6 +39,7 @@ const CommunityDescForm = () => {
   return (
     <div>
       <h1 className="text-xl font-bold py-5">Community Description</h1>
+      <div className="h-px bg-iceblue w-full mb-5"></div>
       <div className="mb-6">
         <label
           htmlFor="Heading"

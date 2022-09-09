@@ -51,6 +51,7 @@ const TextHighlightForm = () => {
   return (
     <div>
       <h1 className="text-xl font-bold py-5">Text High Light</h1>
+      <div className="h-px bg-iceblue w-full mb-5"></div>
       <div className="mb-6">
         <label
           htmlFor="Heading"
@@ -76,7 +77,7 @@ const TextHighlightForm = () => {
         </div>
         {showColorPalet && (
           <div className="">
-            <ColorPicker 
+            <ColorPicker
               width={250}
               height={110}
               color={color}
