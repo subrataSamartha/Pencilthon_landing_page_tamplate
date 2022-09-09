@@ -1,4 +1,5 @@
 import React from "react";
+import FAQ from "../components/FAQ";
 import CommunityDescription from "./CommunityDescription";
 import CommunityLiveFeed from "./CommunityLiveFeed";
 import CommunityOwnerDetail from "./CommunityOwnerDetail";
@@ -12,15 +13,16 @@ import TextHighlight from "./TextHighlight";
 const Preview = () => {
   return (
     <div className="bg-body-color">
-      <Navbar/>
+      <Navbar />
       <HeroSection />
       <TextHighlight />
       <CommunityDescription />
       <CommunityOwnerDetail />
       <ExploreGroup />
-      <Testimonial />
       <CommunityLiveFeed />
-      <Footer/>
+      <Testimonial />
+      <FAQ />
+      <Footer />
     </div>
   );
 };

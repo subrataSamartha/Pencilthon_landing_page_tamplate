@@ -9,21 +9,22 @@ import HeroSection from "./HeroSection";
 import Navbar from "./Navbar";
 import Testimonial from "./Testimonial";
 import TextHighlight from "./TextHighlight";
-import {AiOutlineClose} from 'react-icons/ai';
+import { AiOutlineClose } from "react-icons/ai";
+import FAQ from "../components/FAQ";
 const Home = () => {
   return (
     <div className="bg-body-color ">
-      
       <SideBar />
-      <Navbar/>
+      <Navbar />
       <HeroSection />
       <TextHighlight />
       <CommunityDescription />
       <CommunityOwnerDetail />
       <ExploreGroup />
-      <Testimonial />
       <CommunityLiveFeed />
-      <Footer/>
+      <Testimonial />
+      <FAQ />
+      <Footer />
     </div>
   );
 };
