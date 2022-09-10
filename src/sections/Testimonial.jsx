@@ -75,7 +75,7 @@ const Testimonial = () => {
 
   return (
     <div
-      className="relative pt-10 pb-10 md:pt-20 w-full flex flex-col items-center bg-body-color"
+      className="relative max-w-[1280px] mx-auto border-2 border-red-800 border-solid px-5 md:px-0 pt-10 pb-10 md:pt-20 w-full flex flex-col items-center bg-body-color"
       ref={ref}
     >
       {url === "/" && (

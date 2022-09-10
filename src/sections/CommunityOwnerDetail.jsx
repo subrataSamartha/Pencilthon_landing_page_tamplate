@@ -43,7 +43,7 @@ function CommunityOwnerDetail() {
   };
 
   return (
-    <div className="w-full relative py-2" ref={ref}>
+    <div className="w-full relative" ref={ref}>
       {url === "/" && (
         <button
           onClick={sidebarCall}
@@ -61,14 +61,14 @@ function CommunityOwnerDetail() {
       )}
 
       <div
-        className="w-full flex flex-col md:flex-row justify-evenly items-center p-8 md:p-24"
+        className="border-2 border-red-800 border-solid max-w-[1280px] mx-auto flex flex-col md:flex-row justify-evenly items-center p-8 md:p-24"
         style={{
           transform: isInView ? "none" : "translateY(150px)",
           opacity: isInView ? 1 : 0,
           transition: "all 1.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
         }}
       >
-        <div className="md:basis-2/6 w-full transition-transform duration-200 ease-in hover:-translate-y-1">
+        <div className="border-2 border-red-800 border-solid md:basis-2/6 w-full transition-transform duration-200 ease-in hover:-translate-y-1">
           <div className="p-4 shadow-white-3 bg-gradient-to-tl bg-gradient from-white to-gray-box rounded-md ">
             <img className="rounded" src={Data.Community.image} alt="image" />
           </div>

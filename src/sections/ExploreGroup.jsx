@@ -7,7 +7,7 @@ import { getShow, setFormNo, setSideBarShow } from "../Redux/SetBarReducer";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 import { useLocation } from "react-router-dom";
-import {AiOutlineClose} from 'react-icons/ai';
+import { AiOutlineClose } from "react-icons/ai";
 function ExploreGroup() {
   // get location
   const loc = useLocation();
@@ -38,18 +38,24 @@ function ExploreGroup() {
   //   console.log(groupCards);
 
   return (
-    <div className="w-full relative py-8" ref={ref}>
+    <div className="w-full relative" ref={ref}>
       {url === "/" && (
-          <button
+        <button
           onClick={sidebarCall}
           className="absolute top-4 right-4 group md:p-4 p-3 text-red-primary rounded-md md:m-2 shadow-white-3 bg-gradient-to-tl from-white to-gray-box bg-white transition-all duration-300 ease-in hover:from-transparent hover:to-transparent hover:bg-red-primary hover:-translate-y-1  hover:text-white"
         >
-         <span className={`${showSideBar === 'on'?'hidden':'inline'}`}>Edit</span> 
-         <AiOutlineClose className={`text-red-primary text-2xl ${showSideBar === 'off'?'hidden':'block'}`}/>
+          <span className={`${showSideBar === "on" ? "hidden" : "inline"}`}>
+            Edit
+          </span>
+          <AiOutlineClose
+            className={`text-red-primary text-2xl ${
+              showSideBar === "off" ? "hidden" : "block"
+            }`}
+          />
         </button>
       )}
 
-      <div className="p-8 md:p-24 max-w-[1280px] mx-auto">
+      <div className="border-2 border-red-800 border-solid p-8 md:p-24 max-w-[1280px] mx-auto">
         <h1
           className="md:text-5xl text-4xl font-bold text-center text-metal-black"
           style={{
@@ -69,15 +75,15 @@ function ExploreGroup() {
             transition: "all 1.2s cubic-bezier(0.17, 0.55, 0.55, 1) 0.9s",
           }}
         >
-          {groupCards.map((curElem,index) => {
+          {groupCards.map((curElem, index) => {
             return (
               <div key={index}>
-              <GroupCard
-                key={curElem.key}
-                groupName={curElem.groupName}
-                groupDesc={curElem.groupDesc}
-                imgPath={curElem.image}
-              />
+                <GroupCard
+                  key={curElem.key}
+                  groupName={curElem.groupName}
+                  groupDesc={curElem.groupDesc}
+                  imgPath={curElem.image}
+                />
               </div>
             );
           })}

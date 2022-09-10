@@ -41,7 +41,7 @@ const Navbar = () => {
             />
           </button>
         )}
-        <div className="container 2xl:px-12 flex flex-wrap justify-between items-center mx-auto px-5 md:px-12 xl:px-12">
+        <div className="container 2xl:px-0 flex flex-wrap justify-between items-center mx-auto px-5 md:px-12 xl:px-12">
           <a href="/" className="flex items-center">
             <img
               src={Data.NavbarDetails.image}

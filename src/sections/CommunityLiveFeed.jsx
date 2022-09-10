@@ -37,7 +37,7 @@ function CommunityLiveFeed() {
 
   return (
     <div
-      className={`w-full p-8 md:px-24 md:pt-24 mb-5 relative flex flex-col md:flex-row items-center`}
+      className={`w-full p-8 md:px-24 relative flex flex-col md:flex-row items-center`}
     >
       {url === "/" && (
         <button
@@ -55,7 +55,7 @@ function CommunityLiveFeed() {
         </button>
       )}
 
-      <div className="container mx-auto flex flex-col md:flex-row items-center text-center md:text-left">
+      <div className="container max-w-[1280px] border-2 border-red-800 border-solid mx-auto flex flex-col md:flex-row items-center text-center md:text-left">
         <div className="w-full md:w-1/2 flex justify-center">
           <h1 className=" text-4xl text-metal-black font-bold">
             {Data.CommunityLive.heading}
@@ -64,7 +64,7 @@ function CommunityLiveFeed() {
 
         <div className="w-full md:w-1/2 mt-12 md:mt-0">
           {/* {info.embed} */}
-          <embed height="400px" width="100%" src={s} type="text/html"></embed>
+          <embed height="600px" width="100%" src={s} type="text/html"></embed>
         </div>
       </div>
     </div>

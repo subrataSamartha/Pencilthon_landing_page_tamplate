@@ -55,7 +55,7 @@ function FAQ() {
   return (
     <div>
       <div
-        className="container mx-auto p-8 md:px-24 md:py-32 flex flex-col md:flex-row gap-10 relative"
+        className="container border-2 border-red-800 border-solid max-w-[1280px] mx-auto p-8 md:px-24 md:py-32 flex flex-col md:flex-row gap-10 relative"
         ref={ref}
         style={{
           transform: isInView ? "none" : "translateY(150px)",
