@@ -55,7 +55,7 @@ function CommunityLiveFeed() {
         </button>
       )}
 
-      <div className="container max-w-[1280px] border-2 border-red-800 border-solid mx-auto flex flex-col md:flex-row items-center text-center md:text-left">
+      <div className="container max-w-[1280px] mx-auto flex flex-col md:flex-row items-center text-center md:text-left">
         <div className="w-full md:w-1/2 flex justify-center">
           <h1 className=" text-4xl text-metal-black font-bold">
             {Data.CommunityLive.heading}

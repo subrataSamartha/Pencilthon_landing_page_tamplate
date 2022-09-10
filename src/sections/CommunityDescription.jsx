@@ -50,7 +50,7 @@ function CommunityDescription() {
           />
         </button>
       )}
-      <div className="border-2 border-red-800 border-solid max-w-[1280px] flex flex-col md:flex-row justify-between gap-4 md:gap-0 mx-auto container">
+      <div className="max-w-[1280px] flex flex-col md:flex-row justify-between gap-4 md:gap-0 mx-auto container">
         <div className="flex gap-4 items-start text-2xl">
           <h1
             style={{

@@ -55,7 +55,7 @@ function ExploreGroup() {
         </button>
       )}
 
-      <div className="border-2 border-red-800 border-solid p-8 md:p-24 max-w-[1280px] mx-auto">
+      <div className="p-8 md:p-24 max-w-[1280px] mx-auto">
         <h1
           className="md:text-5xl text-4xl font-bold text-center text-metal-black"
           style={{
