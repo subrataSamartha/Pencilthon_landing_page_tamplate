@@ -14,8 +14,8 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { AiFillGithub } from "react-icons/ai";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
-import { useLocation } from "react-router-dom";
-import {AiOutlineClose} from 'react-icons/ai';
+import { Link, useLocation } from "react-router-dom";
+import { AiOutlineClose } from "react-icons/ai";
 function CommunityOwnerDetail() {
   // get location
   const loc = useLocation();
@@ -38,16 +38,26 @@ function CommunityOwnerDetail() {
     }
   };
 
+  const handleClick = (link) => {
+    window.open(link);
+  };
+
   return (
     <div className="w-full relative py-2" ref={ref}>
       {url === "/" && (
-         <button
-         onClick={sidebarCall}
-         className="absolute top-4 right-4 group md:p-4 p-3 text-red-primary rounded-md md:m-2 shadow-white-3 bg-gradient-to-tl from-white to-gray-box bg-white transition-all duration-300 ease-in hover:from-transparent hover:to-transparent hover:bg-red-primary hover:-translate-y-1  hover:text-white"
-       >
-        <span className={`${showSideBar === 'on'?'hidden':'inline'}`}>Edit</span> 
-        <AiOutlineClose className={`text-red-primary text-2xl ${showSideBar === 'off'?'hidden':'block'}`}/>
-       </button>
+        <button
+          onClick={sidebarCall}
+          className="absolute top-4 right-4 group md:p-4 p-3 text-red-primary rounded-md md:m-2 shadow-white-3 bg-gradient-to-tl from-white to-gray-box bg-white transition-all duration-300 ease-in hover:from-transparent hover:to-transparent hover:bg-red-primary hover:-translate-y-1  hover:text-white"
+        >
+          <span className={`${showSideBar === "on" ? "hidden" : "inline"}`}>
+            Edit
+          </span>
+          <AiOutlineClose
+            className={`text-red-primary text-2xl ${
+              showSideBar === "off" ? "hidden" : "block"
+            }`}
+          />
+        </button>
       )}
 
       <div
@@ -86,26 +96,41 @@ function CommunityOwnerDetail() {
               }}
             >
               {/* <!-- twitter icon --> */}
-              <button className="group md:p-4 p-3 rounded-md md:m-2 m-1 transition-all duration-300 ease-in shadow-white-3 bg-gradient-to-tl bg-gradient from-white to-gray-box hover:from-transparent hover:-translate-y-1 hover:to-transparent hover:bg-red-primary ">
+              <button
+                onClick={() => handleClick(Data.Community.facebook)}
+                className="group md:p-4 p-3 rounded-md md:m-2 m-1 transition-all duration-300 ease-in shadow-white-3 bg-gradient-to-tl bg-gradient from-white to-gray-box hover:from-transparent hover:-translate-y-1 hover:to-transparent hover:bg-red-primary "
+              >
                 <FaFacebookF className="text-red-primary group-hover:text-white text-2xl font-semibold" />
               </button>
               {/* <!-- instagram icon --> */}
-              <button className="group md:p-4 p-3 rounded-md md:m-2 m-1 transition-all duration-300 ease-in shadow-white-3 bg-gradient-to-tl bg-gradient from-white to-gray-box hover:from-transparent hover:-translate-y-1 hover:to-transparent hover:bg-red-primary ">
+              <button
+                onClick={() => handleClick(Data.Community.twitter)}
+                className="group md:p-4 p-3 rounded-md md:m-2 m-1 transition-all duration-300 ease-in shadow-white-3 bg-gradient-to-tl bg-gradient from-white to-gray-box hover:from-transparent hover:-translate-y-1 hover:to-transparent hover:bg-red-primary "
+              >
                 <GrTwitter className="text-red-primary group-hover:text-white text-2xl font-semibold" />
               </button>
 
               {/* <!-- facebook icon --> */}
-              <button className="group md:p-4 p-3 rounded-md md:m-2 m-1 transition-all duration-300 ease-in shadow-white-3 bg-gradient-to-tl bg-gradient from-white to-gray-box hover:from-transparent hover:-translate-y-1 hover:to-transparent hover:bg-red-primary ">
+              <button
+                onClick={() => handleClick(Data.Community.instagram)}
+                className="group md:p-4 p-3 rounded-md md:m-2 m-1 transition-all duration-300 ease-in shadow-white-3 bg-gradient-to-tl bg-gradient from-white to-gray-box hover:from-transparent hover:-translate-y-1 hover:to-transparent hover:bg-red-primary "
+              >
                 <GrInstagram className="text-red-primary group-hover:text-white text-2xl font-semibold" />
               </button>
 
               {/* <!-- github icon --> */}
-              <button className="group md:p-4 p-3 rounded-md md:m-2 m-1 transition-all duration-300 ease-in shadow-white-3 bg-gradient-to-tl bg-gradient from-white to-gray-box hover:from-transparent hover:-translate-y-1 hover:to-transparent hover:bg-red-primary ">
+              <button
+                onClick={() => handleClick(Data.Community.linkedin)}
+                className="group md:p-4 p-3 rounded-md md:m-2 m-1 transition-all duration-300 ease-in shadow-white-3 bg-gradient-to-tl bg-gradient from-white to-gray-box hover:from-transparent hover:-translate-y-1 hover:to-transparent hover:bg-red-primary "
+              >
                 <FaLinkedinIn className="text-red-primary group-hover:text-white text-2xl font-semibold" />
               </button>
 
               {/* <!-- linkedin icon --> */}
-              <button className="group md:p-4 p-3 rounded-md md:m-2 m-1 transition-all duration-300 ease-in shadow-white-3 bg-gradient-to-tl bg-gradient from-white to-gray-box hover:from-transparent hover:-translate-y-1 hover:to-transparent hover:bg-red-primary ">
+              <button
+                onClick={() => handleClick(Data.Community.github)}
+                className="group md:p-4 p-3 rounded-md md:m-2 m-1 transition-all duration-300 ease-in shadow-white-3 bg-gradient-to-tl bg-gradient from-white to-gray-box hover:from-transparent hover:-translate-y-1 hover:to-transparent hover:bg-red-primary "
+              >
                 <AiFillGithub className="text-red-primary group-hover:text-white text-2xl font-semibold" />
               </button>
             </div>

@@ -12,6 +12,11 @@ const initialState = {
     heading: "I’m John Lee, Teacher by ♥️ and programmer by profession.",
     paragraph:
       "I use animation as a third dimension by which to simplify experiences and kuiding thro each and every interaction. I’m not adding motion just to spruce things up, but doing it in ways that.",
+    facebook: "https://www.facebook.com/",
+    twitter: "https://www.twitter.com/",
+    instagram: "https://www.instagram.com/",
+    linkedin: "https://www.linkedin.com/",
+    github: "https://www.github.com/",
   },
   ExploreGroup: [
     {

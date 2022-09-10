@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux/es/exports";
 import { getData, setData } from "../Redux/DataReducer";
 import { getShow, setFormNo, setSideBarShow } from "../Redux/SetBarReducer";
+import { FaFacebookF } from "react-icons/fa";
+import { GrTwitter } from "react-icons/gr";
+import { GrInstagram } from "react-icons/gr";
+import { FaLinkedinIn } from "react-icons/fa";
+import { AiFillGithub } from "react-icons/ai";
 
 const CommunityDetForm = () => {
   const dispatch = useDispatch();
@@ -12,6 +17,11 @@ const CommunityDetForm = () => {
     image: Data.Community.image,
     heading: Data.Community.heading,
     paragraph: Data.Community.paragraph,
+    facebook: Data.Community.facebook,
+    twitter: Data.Community.twitter,
+    instagram: Data.Community.instagram,
+    linkedin: Data.Community.linkedin,
+    github: Data.Community.github,
   });
 
   const changeInfo = (e) => {
@@ -105,6 +115,66 @@ const CommunityDetForm = () => {
           id="Paragrapgh"
           name="paragraph"
           value={info.paragraph}
+          onChange={(e) => changeInfo(e.target)}
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm outline-none focus:border-blue-500 block w-full p-2.5"
+        />
+      </div>
+      <div className="mb-6 flex flex-row items-center">
+        <span className="mr-3">
+          <FaFacebookF className="text-red-primary group-hover:text-white text-2xl font-semibold" />
+        </span>
+        <input
+          type="text"
+          name="facebook"
+          value={info.facebook}
+          onChange={(e) => changeInfo(e.target)}
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm outline-none focus:border-blue-500 block w-full p-2.5"
+        />
+      </div>
+      <div className="mb-6 flex flex-row items-center">
+        <span className="mr-3">
+          <GrTwitter className="text-red-primary group-hover:text-white text-2xl font-semibold" />
+        </span>
+        <input
+          type="text"
+          name="twitter"
+          value={info.twitter}
+          onChange={(e) => changeInfo(e.target)}
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm outline-none focus:border-blue-500 block w-full p-2.5"
+        />
+      </div>
+      <div className="mb-6 flex flex-row items-center">
+        <span className="mr-3">
+          <GrInstagram className="text-red-primary group-hover:text-white text-2xl font-semibold" />
+        </span>
+        <input
+          type="text"
+          name="instagram"
+          value={info.instagram}
+          onChange={(e) => changeInfo(e.target)}
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm outline-none focus:border-blue-500 block w-full p-2.5"
+        />
+      </div>
+      <div className="mb-6 flex flex-row items-center">
+        <span className="mr-3">
+          <FaLinkedinIn className="text-red-primary group-hover:text-white text-2xl font-semibold" />
+        </span>
+        <input
+          type="text"
+          name="linkedin"
+          value={info.linkedin}
+          onChange={(e) => changeInfo(e.target)}
+          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm outline-none focus:border-blue-500 block w-full p-2.5"
+        />
+      </div>
+      <div className="mb-6 flex flex-row items-center">
+        <span className="mr-3">
+          <AiFillGithub className="text-red-primary group-hover:text-white text-2xl font-semibold" />
+        </span>
+        <input
+          type="text"
+          name="github"
+          value={info.github}
           onChange={(e) => changeInfo(e.target)}
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm outline-none focus:border-blue-500 block w-full p-2.5"
         />
