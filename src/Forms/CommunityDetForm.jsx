@@ -110,13 +110,21 @@ const CommunityDetForm = () => {
         >
           Paragraph
         </label>
-        <input
+        {/* <input
           type="text"
           id="Paragrapgh"
           name="paragraph"
           value={info.paragraph}
           onChange={(e) => changeInfo(e.target)}
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm outline-none focus:border-blue-500 block w-full p-2.5"
+        /> */}
+        <textarea
+          id="Paragraph"
+          rows={7}
+          name="paragraph"
+          value={info.paragraph}
+          onChange={(e) => changeInfo(e.target)}
+          className="bg-gray-50 border  outline-none border-gray-300 text-gray-900 text-sm rounded-sm  focus:border-blue-500 block w-full p-2.5"
         />
       </div>
       <div className="mb-6 flex flex-row items-center">

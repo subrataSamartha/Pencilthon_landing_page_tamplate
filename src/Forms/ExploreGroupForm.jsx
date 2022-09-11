@@ -127,13 +127,21 @@ const ExploreGroupForm = () => {
         >
           Paragraph
         </label>
-        <input
+        {/* <input
           type="text"
           id="Paragrapgh"
           name="groupDesc"
           value={todo.groupDesc}
           onChange={(e) => changeInfo(e.target)}
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-sm outline-none focus:border-blue-500 block w-full p-2.5"
+        /> */}
+        <textarea
+          id="Paragraph"
+          rows={7}
+          name="groupDesc"
+          value={todo.groupDesc}
+          onChange={(e) => changeInfo(e.target)}
+          className="bg-gray-50 border  outline-none border-gray-300 text-gray-900 text-sm rounded-sm  focus:border-blue-500 block w-full p-2.5"
         />
       </div>
       <button
